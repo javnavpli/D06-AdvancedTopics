@@ -33,6 +33,15 @@
 		code='authenticated.messageThread.form.button.listUsers'
 		method='get' action='/authenticated/user-thread/list-mine?id=${id}' />
 		
+	<acme:check-access test="${ removable }">
+		<acme:form-submit test="${command == 'show'}"
+			code="authenticated.messageThread.form.button.delete"
+			action="/authenticated/message-thread/delete"/>
+		<acme:form-submit test="${command == 'delete'}"
+			code="authenticated.messageThread.form.button.delete"
+			action="/authenticated/message-thread/delete"/>
+	</acme:check-access>
+		
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 	
 </acme:form>

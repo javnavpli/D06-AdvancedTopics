@@ -9,10 +9,8 @@
 </acme:list>
 
 <acme:form>
-
-	
 	<acme:form-submit
-				code='authenticated.user-thread.form.button.create'
+				code='authenticated.userThread.form.button.create'
 				action='/authenticated/user-thread/create?${pageContext.request.queryString}'/>
-				
+	<acme:form-return code="authenticated.userThread.form.button.return"/>	
 </acme:form>

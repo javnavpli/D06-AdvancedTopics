@@ -22,8 +22,11 @@
 	</jstl:if>
 	
 	<jstl:if test="${command == 'create' }">
-		<acme:form-integer code="authenticated.userThread.form.label.userId" path="userId" />
-		
+		<acme:form-select code="authenticated.userThread.form.label.userToAdd" path="userToAdd">
+			<jstl:forEach items="${ systemUsers}" var="auth">
+				<acme:form-option code="${ auth.userAccount.username}" value="${ auth.userAccount.id}"/>
+			</jstl:forEach>
+		</acme:form-select>
 	</jstl:if>
 	
 

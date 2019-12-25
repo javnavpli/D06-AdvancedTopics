@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.userThread;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +34,13 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "user", "messageThread");
+		Authenticated user;
+
+		int username = (int) request.getModel().getAttribute("userToAdd");
+		user = this.repository.findAuthenticatedById(username);
+		entity.setUser(user);
+
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -41,7 +49,11 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "userId");
+		Collection<Authenticated> systemUsersToAdd = this.repository.findManyAllUsersExceptThread(request.getModel().getInteger("id"));
+		model.setAttribute("systemUsers", systemUsersToAdd);
+		model.setAttribute("userToAdd", " ");
+
+		request.unbind(entity, model);
 	}
 
 	@Override
@@ -49,12 +61,8 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		UserThread result;
 		result = new UserThread();
 
-		int intMessageThreadId = request.getModel().getInteger("id");
-		MessageThread mt = this.repository.findMessageThreadById(intMessageThreadId);
+		MessageThread mt = this.repository.findMessageThreadById(request.getModel().getInteger("id"));
 		result.setMessageThread(mt);
-
-		Authenticated user = new Authenticated();
-		result.setUser(user);
 
 		return result;
 	}
@@ -72,14 +80,13 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 
-		MessageThread messageThread = entity.getMessageThread();
+		//		MessageThread messageThread = this.repository.findMessageThreadById(request.getModel().getInteger("id"));
+		//		Collection<UserThread> ut = messageThread.getUsers();
 
-		Authenticated user = this.repository.findAuthenticatedById(request.getModel().getInteger("userId"));
-
-		entity.setMessageThread(messageThread);
-		entity.setUser(user);
-
-		//-----------------------------------------------------------------
+		//		Authenticated user = this.repository.findAuthenticatedById(request.getModel().getInteger("userId"));
+		//
+		//		entity.setMessageThread(messageThread);
+		//		entity.setUser(user);
 
 		this.repository.save(entity);
 
