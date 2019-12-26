@@ -12,7 +12,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedChallengeRepository extends AbstractRepository {
 
-	@Query("select c from Challenge c where c.id = ?1")
+	@Query("select c from Challenge c where c.id = ?1 and deadline >= NOW()")
 	Challenge findOneById(int id);
 
 	@Query("select c from Challenge c where deadline >= NOW()")

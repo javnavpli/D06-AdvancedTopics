@@ -39,9 +39,9 @@ public class AnonymousSanchezBulletinCreateService implements AbstractCreateServ
 		date = new Date(System.currentTimeMillis() - 1);
 
 		result = new SanchezBulletin();
-		result.setAuthor("Autor de prueba");
-		result.setCity("Ciudad de prueba");
-		result.setCountry("Pais de prueba");
+		//		result.setAuthor("Autor de prueba");
+		//		result.setCity("Ciudad de prueba");
+		//		result.setCountry("Pais de prueba");
 		result.setDate(date);
 
 		return result;

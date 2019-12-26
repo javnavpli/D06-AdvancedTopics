@@ -19,88 +19,58 @@ import acme.framework.services.AbstractCreateService;
 public class ProviderRequestEntityCreateService implements AbstractCreateService<Provider, RequestEntity> {
 
 	@Autowired
-
 	ProviderRequestEntityRepository repository;
 
 
 	@Override
-
 	public boolean authorise(final Request<RequestEntity> request) {
-
 		assert request != null;
 
 		return true;
-
 	}
 
 	@Override
-
 	public void bind(final Request<RequestEntity> request, final RequestEntity entity, final Errors errors) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert errors != null;
 
 		request.bind(entity, errors, "moment");
-
 	}
 
 	@Override
 
 	public void unbind(final Request<RequestEntity> request, final RequestEntity entity, final Model model) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert model != null;
 
-		request.unbind(entity, model, "title", "deadline", "text", "rewardMin", "rewardMax", "ticker");
+		request.unbind(entity, model, "title", "deadline", "text", "reward", "ticker");
 
 	}
 
 	@Override
 
 	public RequestEntity instantiate(final Request<RequestEntity> request) {
+		assert request != null;
 
-		RequestEntity result;
-
-		result = new RequestEntity();
-
+		RequestEntity result = new RequestEntity();
 		return result;
 
 	}
 
 	@Override
-
 	public void validate(final Request<RequestEntity> request, final RequestEntity entity, final Errors errors) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert errors != null;
 
-		if (!errors.hasErrors("rewardMax")) {
-			errors.state(request, entity.getRewardMax() != null, "rewardMax", "provider.requestEntity.form.error.rewardMaxIncorrect");
+		if (!errors.hasErrors("reward")) {
+			errors.state(request, entity.getReward() != null, "reward", "provider.requestEntity.form.error.rewardIncorrect");
 		}
 
-		if (!errors.hasErrors("rewardMin")) {
-			errors.state(request, entity.getRewardMin() != null, "rewardMin", "provider.requestEntity.form.error.rewardMinIncorrect");
-		}
-
-		if (!errors.hasErrors("rewardMax")) {
-			errors.state(request, entity.getRewardMax().getCurrency().equals("EUR") || entity.getRewardMax().getCurrency().equals("€"), "rewardMax", "provider.requestEntity.form.error.rewardMaxEUR");
-		}
-
-		if (!errors.hasErrors("rewardMin")) {
-			errors.state(request, entity.getRewardMin().getCurrency().equals("EUR") || entity.getRewardMin().getCurrency().equals("€"), "rewardMin", "provider.requestEntity.form.error.rewardMinEUR");
-		}
-
-		if (!errors.hasErrors("rewardMax") && !errors.hasErrors("rewardMin")) {
-			errors.state(request, entity.getRewardMax().getAmount() >= entity.getRewardMin().getAmount(), "rewardMax", "provider.requestEntity.form.error.rewardMaxAmount");
+		if (!errors.hasErrors("reward")) {
+			errors.state(request, entity.getReward().getCurrency().equals("EUR") || entity.getReward().getCurrency().equals("€"), "reward", "provider.requestEntity.form.error.rewardEUR");
 		}
 
 		if (!errors.hasErrors("deadline")) {

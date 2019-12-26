@@ -12,7 +12,7 @@ authenticated.messageThread.form.label.title = Title:
 authenticated.messageThread.form.label.moment = Moment:
 authenticated.messageThread.form.label.starterUsername = Starter:
 
-authenticated.messageThread.form.button.listMessages = List messages from this thread
+authenticated.messageThread.form.button.listMessages = Messages
 authenticated.messageThread.form.button.return = Return
 authenticated.messageThread.form.button.create = Create
 authenticated.messageThread.form.button.delete = Delete

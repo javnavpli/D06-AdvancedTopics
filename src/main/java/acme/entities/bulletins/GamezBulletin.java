@@ -30,7 +30,7 @@ public class GamezBulletin extends DomainEntity {
 	private Date				moment;
 
 	@Digits(integer = 10, fraction = 2)
-	private double				kcalories;
+	private Double				kcalories;
 
 	@NotBlank
 	private String				directions;

@@ -26,7 +26,6 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
-        `justification` varchar(255),
         `moment` datetime(6),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
@@ -87,11 +86,10 @@
     create table `commercial_banner` (
        `id` integer not null,
         `version` integer not null,
-        `credit_card` blob,
         `picture` varchar(255),
         `slogan` varchar(255),
         `url` varchar(255),
-        `sponsor_id` integer not null,
+        `credit_card_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -134,7 +132,7 @@
        `id` integer not null,
         `version` integer not null,
         `description` varchar(255),
-        `timex_week` double precision not null,
+        `timex_week` double precision,
         `title` varchar(255),
         `job_id` integer not null,
         primary key (`id`)
@@ -154,7 +152,7 @@
         `version` integer not null,
         `directions` varchar(255),
         `food` varchar(255),
-        `kcalories` double precision not null,
+        `kcalories` double precision,
         `moment` datetime(6),
         primary key (`id`)
     ) engine=InnoDB;
@@ -174,7 +172,7 @@
         `version` integer not null,
         `deadline` datetime(6),
         `description` varchar(255),
-        `final_mode` bit not null,
+        `final_mode` bit,
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
@@ -254,6 +252,7 @@
         `min_money_amount` double precision,
         `min_money_currency` varchar(255),
         `moment` datetime(6),
+        `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -281,10 +280,8 @@
         `version` integer not null,
         `deadline` datetime(6),
         `moment` datetime(6),
-        `reward_max_amount` double precision,
-        `reward_max_currency` varchar(255),
-        `reward_min_amount` double precision,
-        `reward_min_currency` varchar(255),
+        `reward_amount` double precision,
+        `reward_currency` varchar(255),
         `text` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
@@ -306,7 +303,7 @@
         `version` integer not null,
         `english_words` varchar(255),
         `spanish_words` varchar(255),
-        `threshold` double precision not null,
+        `threshold` double precision,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -411,9 +408,9 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        references `user_account` (`id`);
 
     alter table `commercial_banner` 
-       add constraint `FKd0k52g7lcacefcp62kb4p9aor` 
-       foreign key (`sponsor_id`) 
-       references `sponsor` (`id`);
+       add constraint `FKfp0yot74q1m8ofbclq3nlfidw` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 

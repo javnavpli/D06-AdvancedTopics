@@ -52,9 +52,9 @@ public class MunizBulletinCreateService implements AbstractCreateService<Anonymo
 		MunizBulletin result;
 
 		result = new MunizBulletin();
-		result.setName("Isaac");
-		result.setSurname("Muñiz");
-		result.setIdCode("44242996N");
+		//		result.setName("Isaac");
+		//		result.setSurname("Muñiz");
+		//		result.setIdCode("44242996N");
 
 		return result;
 	}

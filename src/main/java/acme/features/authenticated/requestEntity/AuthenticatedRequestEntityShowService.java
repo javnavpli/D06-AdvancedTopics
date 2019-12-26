@@ -34,7 +34,7 @@ public class AuthenticatedRequestEntityShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "deadline", "text", "rewardMin", "rewardMax", "ticker");
+		request.unbind(entity, model, "title", "moment", "deadline", "text", "reward", "ticker");
 	}
 
 	@Override

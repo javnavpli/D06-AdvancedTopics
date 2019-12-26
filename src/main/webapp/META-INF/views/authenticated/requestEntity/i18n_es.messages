@@ -12,8 +12,7 @@ authenticated.requestEntity.form.label.title = Título:
 authenticated.requestEntity.form.label.moment = Momento:
 authenticated.requestEntity.form.label.deadline = Fecha límite:
 authenticated.requestEntity.form.label.text = Texto:
-authenticated.requestEntity.form.label.rewardMin = Recompensa mínima:
-authenticated.requestEntity.form.label.rewardMax = Recompensa máxima:
+authenticated.requestEntity.form.label.reward = Recompensa:
 authenticated.requestEntity.form.label.ticker = Identificador:
 authenticated.requestEntity.form.button.return = Volver
 

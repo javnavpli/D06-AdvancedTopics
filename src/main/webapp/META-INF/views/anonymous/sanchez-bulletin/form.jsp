@@ -16,9 +16,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.author" path="author"/>
-    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.city" path="city"/>
-    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.country" path="country"/>
+    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.author" path="author" placeholder="Autor de prueba"/>
+    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.city" path="city" placeholder="Ciudad de prueba"/>
+    <acme:form-textbox code="anonymous.sanchez-bulletin.form.label.country" path="country" placeholder="País de prueba"/>
     
     <acme:form-submit code="anonymous.sanchez-bulletin.form.button.create" action="/anonymous/sanchez-bulletin/create"/>
     <acme:form-return code="anonymous.sanchez-bulletin.form.button.return"/>

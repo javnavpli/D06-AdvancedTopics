@@ -17,6 +17,7 @@
 
 <acme:form>
 	<acme:form-textbox readonly="true" code="employer.application.form.label.referenceNumber" path="referenceNumber"/>
+	<acme:form-textbox readonly="true" code="employer.application.form.label.status" path="status"/>
 	<acme:form-moment readonly="true" code="employer.application.form.label.moment" path="moment"/>
 	<acme:form-textbox readonly="true" code="employer.application.form.label.statement" path="statement"/>
 	<acme:form-textarea readonly="true" code="employer.application.form.label.skills" path="skills"/>

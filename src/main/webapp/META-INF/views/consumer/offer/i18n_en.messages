@@ -14,11 +14,8 @@ consumer.offer.form.label.info = Info:
 consumer.offer.form.label.maxMoney = maximun Money:
 consumer.offer.form.label.minMoney = minimun Money:
 consumer.offer.form.label.deadline = Deadline:
+provider.offer.form.label.ticker = ticker:
 consumer.offer.form.button.return = Return
-
-consumer.offer.list.label.moment = Moment
-consumer.offer.list.label.title = Title
-consumer.offer.list.label.deadline = Deadline
 
 consumer.offer.form.button.create = Create
 consumer.offer.form.label.checkbox = Confirm
@@ -30,5 +27,7 @@ consumer.offer.form.error.minMoneyEUR = The currency must be euros (EUR or €)
 consumer.offer.form.error.maxMoneyAmount = The max money offered must be equal or greater than the min money offered
 consumer.offer.form.error.deadlineIncorrect = This must be a non-blank date 
 consumer.offer.form.error.deadline = The deadline must be a future date
+provider.offer.form.error.tickerIncorrect = This ticker is already being used
+
 
 consumer.offer.form.error.accept = Please, confirm the changes

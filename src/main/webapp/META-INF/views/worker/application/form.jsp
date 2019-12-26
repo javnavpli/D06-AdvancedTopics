@@ -19,7 +19,8 @@
 	
 	<jstl:if test="${command != 'create' }">
 		<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber" readonly="true" />
-		<acme:form-textbox code="worker.application.form.label.jobTitle" path="jobTitle" readonly="true"/>
+		<acme:form-textbox code="worker.application.form.label.jobTitle" path="job.title" readonly="true"/>
+		<acme:form-textbox code="worker.application.form.label.status" path="status" readonly="true"/>
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
 	</jstl:if>
 
@@ -31,7 +32,7 @@
 	
 	<acme:form-submit test="${command == 'create'}"
 			code='worker.application.form.button.create'
-			action='/worker/application/create?jobid=${param.jobid}' />
+			action='/worker/application/create' />
 
 	<acme:form-return code="worker.application.form.button.return"/>
 	

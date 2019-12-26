@@ -19,21 +19,13 @@ public class ProviderRequestEntityController extends AbstractController<Provider
 	//Internal state -------------------------------------------
 
 	@Autowired
-	private ProviderRequestEntityListService	listService;
-
-	@Autowired
-	private ProviderRequestEntityShowService	showService;
-
-	@Autowired
-	private ProviderRequestEntityCreateService	createService;
+	private ProviderRequestEntityCreateService createService;
 
 
 	//Constructors ---------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 

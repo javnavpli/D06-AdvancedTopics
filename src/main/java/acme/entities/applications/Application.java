@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -46,6 +45,9 @@ public class Application extends DomainEntity {
 	@Past
 	private Date				moment;
 
+	@NotNull
+	private ApplicationStatus	status;
+
 	@NotBlank
 	private String				statement;
 
@@ -55,10 +57,7 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				qualifications;
 
-	@NotNull
-	private ApplicationStatus	status;
-
-	private String				justification;
+	//	private String				justification;
 
 	@NotNull
 	@Valid
@@ -69,11 +68,5 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Job					job;
-
-
-	@Transient
-	public String getJobTitle() {
-		return this.job.getTitle();
-	}
 
 }
