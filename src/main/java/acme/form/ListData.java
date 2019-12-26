@@ -3,7 +3,6 @@ package acme.form;
 
 import java.io.Serializable;
 
-import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,13 +19,13 @@ public class ListData implements Serializable {
 	Integer						numberAnnouncements;
 	Integer						numberCompanies;
 	Integer						numberInvestors;
-	Money						minRewardRequest;
-	Money						maxRewardRequest;
-	Money						averageRewardRequest;
-	Money						derivationRewardRequest;
-	Money						minRewardOffer;
-	Money						maxRewardOffer;
-	Money						averageRewardOffer;
-	Money						derivationRewardOffer;
+	Double						minRewardRequest;
+	Double						maxRewardRequest;
+	Double						averageRewardRequest;
+	Double						derivationRewardRequest;
+	Double						minRewardOffer;
+	Double						maxRewardOffer;
+	Double						averageRewardOffer;
+	Double						derivationRewardOffer;
 
 }

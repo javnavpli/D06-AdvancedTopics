@@ -2,11 +2,11 @@
 package acme.features.employer.job;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.applications.Application;
 import acme.entities.duty.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
@@ -29,7 +29,9 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		Job job = this.repository.findOneJobById(request.getModel().getInteger("id"));
+
+		return job.getEmployer().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override
@@ -47,7 +49,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo");
+		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode");
 	}
 
 	@Override
@@ -70,9 +72,9 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert errors != null;
 
 		if (!errors.hasErrors()) {
-			List<Integer> ids = this.repository.findJobsWithApplications();
 			int idThisJob = request.getModel().getInteger("id");
-			errors.state(request, !ids.contains(idThisJob), "reference", "employer.job.form.error.delete");
+			Collection<Application> ap = this.repository.findApplicationsByJobId(idThisJob);
+			errors.state(request, ap == null, "reference", "employer.job.form.error.delete");
 		}
 
 	}

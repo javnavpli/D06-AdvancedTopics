@@ -12,12 +12,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedJobRepository extends AbstractRepository {
 
-	@Query("select j from Job j where j.id = ?1")
+	@Query("select j from Job j where j.id = ?1 and (j.finalMode = 1 and j.deadline >= NOW())")
 	Job findOneJobById(int id);
-
 
 	@Query("select j from Job j where (j.finalMode = 1 and j.deadline >= NOW())")
 	Collection<Job> findManyJobActive();
-
 
 }

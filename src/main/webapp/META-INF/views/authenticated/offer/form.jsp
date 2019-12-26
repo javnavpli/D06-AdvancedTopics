@@ -22,6 +22,7 @@
 	<acme:form-textarea code="authenticated.offer.form.label.info" path="info"/>
 	<acme:form-integer code="authenticated.offer.form.label.maxMoney" path="maxMoney"/>
 	<acme:form-integer code="authenticated.offer.form.label.minMoney" path="minMoney"/>
+	<acme:form-integer code="authenticated.offer.form.label.ticker" path="ticker"/>
 	
 	<acme:form-return code="authenticated.offer.form.button.return"/>
 </acme:form>

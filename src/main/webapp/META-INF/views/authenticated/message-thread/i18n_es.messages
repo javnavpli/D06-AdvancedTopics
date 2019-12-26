@@ -12,7 +12,7 @@ authenticated.messageThread.form.label.title = Título:
 authenticated.messageThread.form.label.moment = Momento:
 authenticated.messageThread.form.label.starterUsername = Creador:
 
-authenticated.messageThread.form.button.listMessages = Listar mensajes de esta cadena
+authenticated.messageThread.form.button.listMessages = Mensajes
 authenticated.messageThread.form.button.return = Volver
 
 authenticated.messageThread.list.label.moment = Momento

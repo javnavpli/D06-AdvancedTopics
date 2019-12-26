@@ -305,17 +305,6 @@
 				<ref bean="duty03"/>
 			</list>
 		</property>
-		<property name="auditRecords"> 
-			<list>
-				<ref bean="AuditRecord01"/>
-				<ref bean="AuditRecord02"/>
-			</list>
-		</property>
-		<property name="applications"> 
-			<list>
-				<ref bean="application01"/>
-			</list>
-		</property>
     	<property name="finalMode" value="true" />
     	<property name="employer" ref="employer1Employer" />
     </bean>
@@ -332,17 +321,6 @@
 				<ref bean="duty04"/>
 			</list>
 		</property>
-		<property name="auditRecords"> 
-			<list>
-				<ref bean="AuditRecord03"/>
-			</list>
-		</property>
-		<property name="applications"> 
-			<list>
-				<ref bean="application02"/>
-				<ref bean="application03"/>
-			</list>
-		</property>
     	<property name="finalMode" value="false" />
     	<property name="employer" ref="employer1Employer" />
     </bean>
@@ -357,15 +335,6 @@
     	<property name="duties"> 
 			<list>
 				<ref bean="duty04"/>
-			</list>
-		</property>
-		<property name="auditRecords"> 
-			<list>
-			</list>
-		</property>
-		<property name="applications"> 
-			<list>
-				<ref bean="application04"/>
 			</list>
 		</property>
     	<property name="finalMode" value="true" />
@@ -598,7 +567,7 @@
 		<property name="number" value="5137984536590257" />
 		<property name="cvv" value="254" />
 	</bean>
-	
+
 	<!-- Sponsors -->
 
     <bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
@@ -651,7 +620,7 @@
 
     <bean name="sponsor2Sponsor" class="acme.entities.roles.Sponsor">
         <property name="organisationName" value="organisation1" />
-        <property name="creditCard" ref="creditCard01" />
+        <property name="creditCard" ref="creditCard02" />
         <property name="userAccount" ref="sponsor2UserAccount" />
     </bean>
 
@@ -666,7 +635,6 @@
 		<property name="slogan" value="Slogaaan!" />
 		<property name="url" value="http://url.com" />
 		<property name="creditCard" ref="creditCard01"/>
-		<property name="sponsor" ref="sponsor1Sponsor"/>
 	</bean>
 
 	<bean id="cbanner02" class="acme.entities.banner.CommercialBanner">
@@ -674,15 +642,13 @@
 		<property name="slogan" value="Slogan!" />
 		<property name="url" value="http://urlurl.com" />
 		<property name="creditCard" ref="creditCard02"/>
-		<property name="sponsor" ref="sponsor1Sponsor"/>
 	</bean>
 
 	<bean id="cbanner03" class="acme.entities.banner.CommercialBanner">
 		<property name="picture" value="http://pictures.com" />
 		<property name="slogan" value="Slogaaan again!" />
 		<property name="url" value="http://urls.com" />
-		<property name="creditCard" ref="creditCard03"/>
-		<property name="sponsor" ref="sponsor2Sponsor"/>
+		<property name="creditCard" ref="creditCard02"/>
 	</bean>
 	
 	<!-- Non Commercial Banners -->
@@ -735,36 +701,36 @@
 		<property value="This is a very old announcement" name="text" />
 	</bean>
 
+	<!-- Rewards -->
 
-	<bean class="acme.framework.datatypes.Money" id="rewardMin01">
+	<bean class="acme.framework.datatypes.Money" id="requestReward01">
 		<property value="200" name="amount" />
 		<property value="EUR" name="currency" />
 	</bean>
 
 
-	<bean class="acme.framework.datatypes.Money" id="rewardMax01">
+	<bean class="acme.framework.datatypes.Money" id="requestReward02">
 		<property value="400" name="amount" />
 		<property value="EUR" name="currency" />
 	</bean>
-
-
-	<bean class="acme.entities.requestEntity.RequestEntity" id="requestEntity02">
-		<property value="request" name="title" />
-		<property value="2018/11/04 19:10" name="moment" />
-		<property value="2020/11/04 20:05" name="deadline" />
-		<property value="This is a request" name="text" />
-		<property name="rewardMin" ref="rewardMin01" />
-		<property name="rewardMax" ref="rewardMax01" />
-		<property value="RXXXX-00001" name="ticker" />
-	</bean>
+	
+	<!-- Request Entity -->
 
 	<bean class="acme.entities.requestEntity.RequestEntity" id="requestEntity01">
 		<property value="request" name="title" />
 		<property value="2018/11/04 19:10" name="moment" />
+		<property value="2020/11/04 20:05" name="deadline" />
+		<property value="This is a request" name="text" />
+		<property name="reward" ref="requestReward01" />
+		<property value="RXXXX-00001" name="ticker" />
+	</bean>
+
+	<bean class="acme.entities.requestEntity.RequestEntity" id="requestEntity02">
+		<property value="request" name="title" />
+		<property value="2018/11/04 19:10" name="moment" />
 		<property value="2018/11/04 20:05" name="deadline" />
 		<property value="This is a request" name="text" />
-		<property name="rewardMin" ref="rewardMin01" />
-		<property name="rewardMax" ref="rewardMax01" />
+		<property name="reward" ref="requestReward02" />
 		<property value="RXXXX-00002" name="ticker" />
 	</bean>
 
@@ -897,6 +863,7 @@
 		<property name="maxMoney" ref="reward03" />
 		<property name="minMoney" ref="reward01" />
 		<property name="info" value="This is the info for the sample offer 01" />
+		<property name="ticker" value="ODTRF-94857" />
 	</bean>
 
 	<bean id="Offer02" class="acme.entities.offers.Offer">
@@ -906,6 +873,7 @@
 		<property name="maxMoney" ref="reward03" />
 		<property name="minMoney" ref="reward02" />
 		<property name="info" value="This is the info for the sample offer 01" />
+		<property name="ticker" value="ODTFG-94498" />
 	</bean>
 
 	<bean id="Offer03" class="acme.entities.offers.Offer">
@@ -915,6 +883,7 @@
 		<property name="maxMoney" ref="reward02" />
 		<property name="minMoney" ref="reward01" />
 		<property name="info" value="This is the info for the sample offer 01" />
+		<property name="ticker" value="OBCFG-32748" />
 	</bean>
 
 	<!-- Bulletins -->

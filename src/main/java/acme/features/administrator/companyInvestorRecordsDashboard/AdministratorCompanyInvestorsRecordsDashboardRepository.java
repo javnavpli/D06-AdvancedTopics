@@ -22,16 +22,16 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorCompanyInvestorsRecordsDashboardRepository extends AbstractRepository {
 
-	@Query("select  sector from CompanyRecords group by sector order by sector asc")
+	@Query("select a.sector from CompanyRecords a group by a.sector order by a.sector asc")
 	ArrayList<String> companiesSectors();
 
-	@Query("select  sector from InvestorRecord group by sector order by sector asc")
+	@Query("select a.sector from InvestorRecord a group by a.sector order by a.sector asc")
 	ArrayList<String> investorsSectors();
 
-	@Query("select  count(sector) from CompanyRecords group by sector order by sector asc")
+	@Query("select count(a.sector) from CompanyRecords a group by a.sector order by a.sector asc")
 	ArrayList<Integer> companies();
 
-	@Query("select  count(sector) from InvestorRecord group by sector order by sector asc")
+	@Query("select count(a.sector) from InvestorRecord a group by a.sector order by a.sector asc")
 	ArrayList<Integer> investors();
 
 }

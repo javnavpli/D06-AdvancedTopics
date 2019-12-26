@@ -34,7 +34,7 @@ public class AdministratorCommercialBannerShowService implements AbstractShowSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "url", "slogan", "creditcardholder", "creditcardbrand", "creditcarddeadline", "creditcardnumber", "creditcardcvv");
+		request.unbind(entity, model, "picture", "url", "slogan", "creditCard.holder", "creditCard.brand", "creditCard.deadline", "creditCard.number", "creditCard.cvv");
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class AdministratorCommercialBannerShowService implements AbstractShowSer
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOneCommercialBannerById(id);
 
 		return result;
 

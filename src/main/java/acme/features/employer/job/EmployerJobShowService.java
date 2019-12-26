@@ -1,8 +1,6 @@
 
 package acme.features.employer.job;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +8,6 @@ import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -28,19 +25,9 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		boolean result;
-		int jobId;
-		Job job;
-		Employer employer;
-		Principal principal;
+		Job job = this.repository.findOneJobById(request.getModel().getInteger("id"));
 
-		jobId = request.getModel().getInteger("id");
-		job = this.repository.findOneJobById(jobId);
-		employer = job.getEmployer();
-		principal = request.getPrincipal();
-		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		return job.getEmployer().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override
@@ -49,18 +36,10 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
-		List<Integer> ids = this.repository.findJobsWithApplications();
-		int idThisJob = request.getModel().getInteger("id");
-		boolean removable = true;
-
-		if (ids.contains(idThisJob)) {
-			removable = false;
-		}
-
+		Boolean removable = this.repository.findApplicationsByJobId(request.getModel().getInteger("id")) == null;
 		model.setAttribute("removable", removable);
 
-		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "description", "finalMode");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "status");
 
 	}
 

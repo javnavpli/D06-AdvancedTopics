@@ -19,21 +19,13 @@ public class ConsumerOfferController extends AbstractController<Consumer, Offer>
 	//Internal state -------------------------------------------
 
 	@Autowired
-	private ConsumerOfferListService	listService;
-
-	@Autowired
-	private ConsumerOfferShowService	showService;
-
-	@Autowired
-	private ConsumerOfferCreateService	createService;
+	private ConsumerOfferCreateService createService;
 
 
 	//Constructors ---------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 

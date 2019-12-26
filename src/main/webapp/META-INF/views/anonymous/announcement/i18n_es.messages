@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.announcement.form.label.title = Título:
-authenticated.announcement.form.label.moment = Momento:
-authenticated.announcement.form.label.moreInfo = Más Información:
-authenticated.announcement.form.label.text = Texto:
-authenticated.announcement.form.button.return = Volver
+anonymous.announcement.form.label.title = Título:
+anonymous.announcement.form.label.moment = Momento:
+anonymous.announcement.form.label.moreInfo = Más Información:
+anonymous.announcement.form.label.text = Texto:
+anonymous.announcement.form.button.return = Volver
 
-authenticated.announcement.list.label.moment = Momento
-authenticated.announcement.list.label.title = Título
+anonymous.announcement.list.label.moment = Momento
+anonymous.announcement.list.label.title = Título

@@ -39,9 +39,9 @@ public class AnonymousGamezBulletinCreateService implements AbstractCreateServic
 		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new GamezBulletin();
-		result.setFood("Tu comida");
-		result.setKcalories(1000.01);
-		result.setDirections("Preparacion de tu comida");
+		//		result.setFood("Tu comida");
+		//		result.setKcalories(1000.01);
+		//		result.setDirections("Preparación");
 		result.setMoment(moment);
 
 		return result;

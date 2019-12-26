@@ -8,7 +8,6 @@ import acme.entities.applications.Application;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -26,17 +25,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		boolean result;
-		Principal principal;
-
-		int appId = request.getModel().getInteger("id");
-		Application app = this.repository.findOneApplicationById(appId);
-		Worker worker = app.getWorker();
-
-		principal = request.getPrincipal();
-		result = worker.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		return this.repository.findOneApplicationById(request.getModel().getInteger("id")).getWorker().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override
@@ -45,8 +34,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "moment", "statement");
-		request.unbind(entity, model, "skills", "qualifications", "status", "jobTitle");
+		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "status", "job.title");
 
 	}
 
@@ -54,13 +42,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 	public Application findOne(final Request<Application> request) {
 		assert request != null;
 
-		Application result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneApplicationById(id);
-
-		return result;
+		return this.repository.findOneApplicationById(request.getModel().getInteger("id"));
 
 	}
 

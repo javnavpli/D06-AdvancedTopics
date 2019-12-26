@@ -19,18 +19,13 @@
 	<acme:form-textbox code="provider.requestEntity.form.label.title" path="title"/>
 	<acme:form-moment code="provider.requestEntity.form.label.deadline" path="deadline"/>
 	<acme:form-textarea code="provider.requestEntity.form.label.text" path="text"/>
-	<acme:form-money code="provider.requestEntity.form.label.rewardMin" path="rewardMin"/>
-	<acme:form-money code="provider.requestEntity.form.label.rewardMax" path="rewardMax"/>
+	<acme:form-money code="provider.requestEntity.form.label.reward" path="reward"/>
 	<acme:form-textbox code="provider.requestEntity.form.label.ticker" path="ticker" placeholder="RXXXX-99999"/>
 	
 	<acme:form-checkbox code="provider.requestEntity.form.label.checkbox"  path="accept"/>
 	
 	<acme:form-submit test="${command == 'create'}"
-
 		code="provider.requestEntity.form.button.create"
-
 		action="/provider/request-entity/create"/>
-	
-	
 	<acme:form-return code="provider.requestEntity.form.button.return"/>
 </acme:form>

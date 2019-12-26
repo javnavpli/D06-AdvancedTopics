@@ -19,7 +19,7 @@
 <acme:form>
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
 	<acme:check-access test="${command != 'create' }">
-		<acme:form-checkbox code="employer.job.form.label.status" path="finalMode"/>
+		<acme:form-textbox code="employer.job.form.label.status" path="status"/>
 	</acme:check-access>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>

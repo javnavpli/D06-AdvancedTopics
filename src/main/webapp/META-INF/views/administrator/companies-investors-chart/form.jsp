@@ -38,13 +38,24 @@
 							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
 								"<jstl:out value="${companiesSectors.get(label)}"/>",
 							</jstl:forEach>
-						]
+						],
+						backgroundColor: [
+							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
+								"#56d798",
+							</jstl:forEach>
+				        ]
 					},{	label:"Investors",
 						data : [
 							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
 								"<jstl:out value="${investorsSectors.get(label)}"/>",
 							</jstl:forEach>
-						]
+						],
+						backgroundColor: [
+							<jstl:forEach var="label" items="${companiesSectors.keySet()}">
+								"#ff8397",
+							</jstl:forEach>
+				          
+				        ]
 					}
 				]
 		};

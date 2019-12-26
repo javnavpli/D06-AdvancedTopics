@@ -20,8 +20,7 @@
 	<acme:form-moment code="authenticated.requestEntity.form.label.moment" path="moment"/>
 	<acme:form-textbox code="authenticated.requestEntity.form.label.deadline" path="deadline"/>
 	<acme:form-textarea code="authenticated.requestEntity.form.label.text" path="text"/>
-	<acme:form-textbox code="authenticated.requestEntity.form.label.rewardMin" path="rewardMin"/>
-	<acme:form-textbox code="authenticated.requestEntity.form.label.rewardMax" path="rewardMax"/>
+	<acme:form-textbox code="authenticated.requestEntity.form.label.reward" path="reward"/>
 	<acme:form-textbox code="authenticated.requestEntity.form.label.ticker" path="ticker"/>
 	
 	<acme:form-return code="authenticated.requestEntity.form.button.return"/>

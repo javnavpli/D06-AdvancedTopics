@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-    <acme:form-textbox code="anonymous.navarro-bulletin.form.label.name" path="name"/>
-    <acme:form-integer code="anonymous.navarro-bulletin.form.label.age" path="age"/>
-    <acme:form-double code="anonymous.navarro-bulletin.form.label.height" path="height"/>
-    <acme:form-double code="anonymous.navarro-bulletin.form.label.weight" path="weight"/>
+    <acme:form-textbox code="anonymous.navarro-bulletin.form.label.name" path="name" placeholder="Juan Martin"/>
+    <acme:form-integer code="anonymous.navarro-bulletin.form.label.age" path="age" placeholder="15"/>
+    <acme:form-double code="anonymous.navarro-bulletin.form.label.height" path="height" placeholder="1.68"/>
+    <acme:form-double code="anonymous.navarro-bulletin.form.label.weight" path="weight" placeholder="1.51"/>
     
     <acme:form-submit code="anonymous.navarro-bulletin.form.button.create" action="/anonymous/navarro-bulletin/create"/>
     <acme:form-return code="anonymous.navarro-bulletin.form.button.return"/>

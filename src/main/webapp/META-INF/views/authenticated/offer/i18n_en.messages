@@ -14,6 +14,7 @@ authenticated.offer.form.label.info = Info:
 authenticated.offer.form.label.maxMoney = maximun Money:
 authenticated.offer.form.label.minMoney = minimun Money:
 authenticated.offer.form.label.deadline = Deadline:
+authenticated.offer.form.label.ticker = Ticker:
 authenticated.offer.form.button.return = Return
 
 authenticated.offer.list.label.moment = Moment

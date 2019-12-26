@@ -10,7 +10,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -45,9 +47,15 @@ public class Offer extends DomainEntity {
 	private String				info;
 
 	@Valid
+	@NotNull
 	private Money				maxMoney;
 
 	@Valid
+	@NotNull
 	private Money				minMoney;
+
+	@NotBlank
+	@Pattern(regexp = "O[A-Z]{4}-\\d{5}")
+	private String				ticker;
 
 }
