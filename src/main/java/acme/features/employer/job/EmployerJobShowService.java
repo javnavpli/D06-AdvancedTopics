@@ -51,11 +51,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 
 		List<Integer> ids = this.repository.findJobsWithApplications();
 		int idThisJob = request.getModel().getInteger("id");
-		boolean removable = true;
-
-		if (ids.contains(idThisJob)) {
-			removable = false;
-		}
+		boolean removable = !ids.contains(idThisJob);
 
 		model.setAttribute("removable", removable);
 
