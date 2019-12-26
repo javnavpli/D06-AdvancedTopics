@@ -34,11 +34,11 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
-		//		Authenticated user;
-		//
-		//		int username = request.getModel().getInteger("userToAdd");
-		//		user = this.repository.findAuthenticatedById(username);
-		//		entity.setUser(user);
+		Authenticated user;
+
+		int username = request.getModel().getInteger("userToAdd");
+		user = this.repository.findAuthenticatedById(username);
+		entity.setUser(user);
 
 		request.bind(entity, errors);
 	}
@@ -74,19 +74,10 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert errors != null;
 	}
 
-	//@SuppressWarnings("unchecked")
 	@Override
 	public void create(final Request<UserThread> request, final UserThread entity) {
 		assert request != null;
 		assert entity != null;
-
-		//		MessageThread messageThread = this.repository.findMessageThreadById(request.getModel().getInteger("id"));
-		//		Collection<UserThread> ut = messageThread.getUsers();
-
-		//		Authenticated user = this.repository.findAuthenticatedById(request.getModel().getInteger("userId"));
-		//
-		//		entity.setMessageThread(messageThread);
-		//		entity.setUser(user);
 
 		this.repository.save(entity);
 
