@@ -12,7 +12,6 @@ authenticated.job.form.label.title = Title:
 authenticated.job.form.label.moreInfo = More Info:
 
 authenticated.job.form.label.status = Status:
-
 authenticated.job.form.label.salary = Salary:
 authenticated.job.form.label.deadline = Deadline:
 authenticated.job.form.label.reference = Reference:

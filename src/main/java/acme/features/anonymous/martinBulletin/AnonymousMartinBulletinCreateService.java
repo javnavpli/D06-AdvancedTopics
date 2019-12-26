@@ -39,10 +39,10 @@ public class AnonymousMartinBulletinCreateService implements AbstractCreateServi
 		date = new Date(System.currentTimeMillis() - 1);
 
 		result = new MartinBulletin();
-		result.setName("Nombre test");
-		result.setSurname("Apellido test");
-		result.setAge(20);
-		result.setText("Test");
+		//		result.setName("Nombre test");
+		//		result.setSurname("Apellido test");
+		//		result.setAge(20);
+		//		result.setText("Test");
 		result.setDate(date);
 
 		return result;

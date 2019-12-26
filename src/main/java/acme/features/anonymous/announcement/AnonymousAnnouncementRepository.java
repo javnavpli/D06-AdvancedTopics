@@ -12,7 +12,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousAnnouncementRepository extends AbstractRepository {
 
-	@Query("select a from Announcement a where a.id = ?1")
+	@Query("select a from Announcement a where a.id = ?1 and datediff(current_timestamp,a.moment) < 30")
 	Announcement findOneById(int id);
 
 	@Query("select a from Announcement a where datediff(current_timestamp,a.moment) < 30")

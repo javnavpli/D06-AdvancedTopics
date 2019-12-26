@@ -3,9 +3,10 @@ package acme.entities.spams;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -29,8 +30,8 @@ public class Spam extends DomainEntity {
 	private String				spanishWords;
 
 	@Digits(integer = 3, fraction = 2)
-	@Min(0)
-	@Max(100)
-	private double				threshold;
+	@Range(min = 0, max = 100)
+	@NotNull
+	private Double				threshold;
 
 }

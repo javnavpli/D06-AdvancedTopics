@@ -16,10 +16,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-    <acme:form-textbox code="anonymous.gamez-bulletin.form.label.food" path="food"/>
-    <acme:form-double code="anonymous.gamez-bulletin.form.label.kcalories" path="kcalories"/>
-    <acme:form-textarea code="anonymous.gamez-bulletin.form.label.directions" path="directions"/>
-    
+    <acme:form-textbox code="anonymous.gamez-bulletin.form.label.food" path="food" placeholder="Tu comida"/>
+    <acme:form-double code="anonymous.gamez-bulletin.form.label.kcalories" path="kcalories" placeholder="1000.01"/>
+    <acme:form-textarea code="anonymous.gamez-bulletin.form.label.directions" path="directions" placeholder="Preparación"/>
     
     <acme:form-submit code="anonymous.gamez-bulletin.form.button.create" action="/anonymous/gamez-bulletin/create"/>
     <acme:form-return code="anonymous.gamez-bulletin.form.button.return"/>

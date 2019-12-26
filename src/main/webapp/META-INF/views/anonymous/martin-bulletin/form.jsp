@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-    <acme:form-textbox code="anonymous.martin-bulletin.form.label.name" path="name"/>
-    <acme:form-textbox code="anonymous.martin-bulletin.form.label.surname" path="surname"/>
-    <acme:form-integer code="anonymous.martin-bulletin.form.label.age" path="age"/>
-    <acme:form-textbox code="anonymous.martin-bulletin.form.label.text" path="text"/>
+    <acme:form-textbox code="anonymous.martin-bulletin.form.label.name" path="name" placeholder="Nombre test"/>
+    <acme:form-textbox code="anonymous.martin-bulletin.form.label.surname" path="surname" placeholder="Apellido test"/>
+    <acme:form-integer code="anonymous.martin-bulletin.form.label.age" path="age" placeholder="20"/>
+    <acme:form-textbox code="anonymous.martin-bulletin.form.label.text" path="text" placeholder="Test"/>
     
     <acme:form-submit code="anonymous.martin-bulletin.form.button.create" action="/anonymous/martin-bulletin/create"/>
     <acme:form-return code="anonymous.martin-bulletin.form.button.return"/>

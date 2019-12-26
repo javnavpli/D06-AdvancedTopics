@@ -17,10 +17,6 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
-	<definition name="provider/request-entity/list" extends="master">
-		<put-attribute name="body" type="template" value="../provider/request-entity/list.jsp" />
-	</definition>
 	
 	<definition name="provider/request-entity/form" extends="master">
 		<put-attribute name="body" type="template" value="../provider/request-entity/form.jsp"/>

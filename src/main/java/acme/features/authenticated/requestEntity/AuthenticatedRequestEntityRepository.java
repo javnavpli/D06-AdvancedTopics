@@ -12,7 +12,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedRequestEntityRepository extends AbstractRepository {
 
-	@Query("select r from RequestEntity r where r.id = ?1")
+	@Query("select r from RequestEntity r where r.id = ?1 and r.deadline > NOW()")
 	RequestEntity findOneById(int id);
 
 	@Query("select r from RequestEntity r where r.deadline > NOW()")

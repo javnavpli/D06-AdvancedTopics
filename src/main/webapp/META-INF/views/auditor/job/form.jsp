@@ -26,30 +26,11 @@
 	<acme:form-url code="auditor.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="auditor.job.form.label.description" path="description"/>
 	
+    <acme:form-submit code='auditor.job.form.button.listDuties' method='get' action='/authenticated/duty/list?id=${id}'/>
+	<acme:form-submit code='auditor.job.form.button.listAuditRecords' method='get' action='/authenticated/audit-records/list-mine?id=${id}'/>
 
-	<p id="duties"></p>
-	 <p id="auditRecords"></p>
-	
 	<acme:form-return code="auditor.job.form.button.return"/>
-	
-	<script type="text/javascript">
-	
-        $(document).ready(function() {
-            var submit = `<acme:form-submit code='auditor.job.form.button.listDuties' method='get' action='/authenticated/duty/list?id=${id}' />`;
-            document.getElementById("duties").innerHTML = submit;
-        });
-    </script>
-    
-   
-	
-	<script type="text/javascript">
-        $(document).ready(function() {
-            var submit = `<acme:form-submit code='auditor.job.form.button.listAuditRecords' method='get' action='/authenticated/audit-records/list-mine?id=${id}' />`;
-            document.getElementById("auditRecords").innerHTML = submit;
-        });
-    </script>
 
-	
 </acme:form>
 
 

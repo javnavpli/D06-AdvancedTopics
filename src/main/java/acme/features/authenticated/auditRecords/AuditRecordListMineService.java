@@ -2,7 +2,6 @@
 package acme.features.authenticated.auditRecords;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,7 +43,6 @@ public class AuditRecordListMineService implements AbstractListService<Authentic
 
 		int id = request.getModel().getInteger("id");
 		result = this.repository.findManyMine(id);
-		result = result.stream().filter(x -> x.getStatus() && x.getAuditor().getUserAccount().getId() != request.getPrincipal().getAccountId()).collect(Collectors.toList());
 
 		return result;
 	}

@@ -33,8 +33,8 @@ master.menu.authenticated = Autentificado
 master.menu.authenticated.listJobs = Listar Trabajos
 master.menu.authenticated.listAnnouncement = Anuncios
 master.menu.authenticated.listChallenge = Retos
-master.menu.authenticated.listCompaniesRecord = Registro de Companias
-master.menu.authenticated.listInvestorRecord = Registro de Inversores
+master.menu.authenticated.listCompaniesRecord = Registros de Compañias
+master.menu.authenticated.listInvestorRecord = Registros de Inversores
 master.menu.authenticated.listOffers = Ofertas
 master.menu.authenticated.listRequests = Peticiones
 
@@ -53,8 +53,8 @@ master.menu.anonymous.listJoseManuel = Bulletin de José Manuel
 master.menu.anonymous.listJose = Bulletin de Jose
 master.menu.anonymous.listJavier = Bulletin de Javier
 master.menu.anonymous.listIsaac = Bulletin de Isaac
-master.menu.anonymous.listCompaniesRecord = Registro de Compañias
-master.menu.anonymous.listInvestorRecord = Registro de Inversores
+master.menu.anonymous.listCompaniesRecord = Registros de Compañias
+master.menu.anonymous.listInvestorRecord = Registros de Inversores
 master.menu.anonymous.listAnnouncements= Anuncios
 master.menu.anonymous.listTopCompanies = Mejores Compañias
 master.menu.anonymous.listTopInvestors = Mejores Inversores
@@ -65,27 +65,20 @@ master.menu.anonymous.listTopInvestors = Mejores Inversores
 master.menu.administrator = Administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.listAnnouncement = Anuncios
-master.menu.administrator.companyRecords = Registro de compañias
+master.menu.administrator.companyRecords = Registros de compañias
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.spam = Configuración de Spam
-master.menu.administrator.companyRecordsChart = Gráfico de Registro de Compañia y Inversores
-master.menu.administrator.listData = Listar Datos
+master.menu.administrator.companyRecordsChart = Gráfica de Registros de Compañías e Inversores
+master.menu.administrator.listData = Datos Estadísticos de Recompensas
 master.menu.administrator.commercial-banner = Banners Comerciales
 master.menu.administrator.non-commercial-banner = Banners No Comerciales
 master.menu.administrator.listChallenge = Retos
-master.menu.administrator.investorRecord = Registro de Inversores
+master.menu.administrator.investorRecord = Registros de Inversores
 master.menu.administrator.listRequestAuditor = Peticiones de Auditor
 
 master.menu.administrator.listDataEmployerWorker = Listar Datos de empleadores y trabajadores
 master.menu.administrator.jobsApplicationsChart = Gráfico de Trabajos y Solicitudes
 master.menu.administrator.applicationsPerDayChart = Gráfico de Solicitudes en los últimos 28 días
-
-master.menu.administrator.commercial-banner.create = Crear Banner Comercial
-master.menu.administrator.non-commercial-banner.create = Crear Banner No Comercial
-master.menu.administrator.listAnnouncement.create = Crear Anuncio
-master.menu.administrator.investorRecord.create = Crear Registro de Inversor
-master.menu.administrator.companyRecords.create = Crear Registro de Compañia
-master.menu.administrator.listChallenge.create = Crear Reto
 
 # master.menu.worker ########################################################
 

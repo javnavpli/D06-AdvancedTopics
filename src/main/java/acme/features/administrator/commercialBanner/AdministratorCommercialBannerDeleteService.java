@@ -55,7 +55,7 @@ public class AdministratorCommercialBannerDeleteService implements AbstractDelet
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOneCommercialBannerById(id);
 
 		return result;
 
@@ -73,8 +73,12 @@ public class AdministratorCommercialBannerDeleteService implements AbstractDelet
 	public void delete(final Request<CommercialBanner> request, final CommercialBanner entity) {
 		assert request != null;
 		assert entity != null;
+		int ccid = entity.getCreditCard().getId();
 
 		this.repository.delete(entity);
+		if (this.repository.findOneSponsorByCreditCardId(ccid) == null) {
+			this.repository.delete(entity.getCreditCard());
+		}
 	}
 
 }

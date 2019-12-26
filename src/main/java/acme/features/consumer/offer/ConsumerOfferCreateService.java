@@ -1,6 +1,7 @@
 
 package acme.features.consumer.offer;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,6 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 	@Override
 
 	public boolean authorise(final Request<Offer> request) {
-
 		assert request != null;
 
 		return true;
@@ -35,51 +35,37 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 	@Override
 
 	public void bind(final Request<Offer> request, final Offer entity, final Errors errors) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert errors != null;
 
 		request.bind(entity, errors, "moment");
-
 	}
 
 	@Override
 
 	public void unbind(final Request<Offer> request, final Offer entity, final Model model) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert model != null;
 
 		request.unbind(entity, model, "title", "deadline", "info", "maxMoney", "minMoney");
-
 	}
 
 	@Override
 
 	public Offer instantiate(final Request<Offer> request) {
+		assert request != null;
 
-		Offer result;
-
-		result = new Offer();
-
+		Offer result = new Offer();
 		return result;
-
 	}
 
 	@Override
 
 	public void validate(final Request<Offer> request, final Offer entity, final Errors errors) {
-
 		assert request != null;
-
 		assert entity != null;
-
 		assert errors != null;
 
 		if (!errors.hasErrors("maxMoney")) {
@@ -111,14 +97,17 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 			errors.state(request, entity.getDeadline().after(currentDate), "deadline", "consumer.offer.form.error.deadline");
 		}
 
+		if (!errors.hasErrors("ticker")) {
+			Collection<String> tickers = this.repository.findAllTickers();
+			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "provider.offer.form.error.tickerIncorrect");
+		}
+
 		if (!errors.hasErrors("accept")) {
 			errors.state(request, request.getModel().getAttribute("accept").equals("true"), "accept", "consumer.offer.form.error.accept");
 		}
-
 	}
 
 	@Override
-
 	public void create(final Request<Offer> request, final Offer entity) {
 		assert request != null;
 		assert entity != null;

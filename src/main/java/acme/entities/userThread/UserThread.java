@@ -3,7 +3,6 @@ package acme.entities.userThread;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -35,16 +34,5 @@ public class UserThread extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Authenticated		user;
-
-
-	@Transient
-	public String getUserUsername() {
-		return this.user.getUserAccount().getUsername();
-	}
-
-	@Transient
-	public String getMessageThreadTitle() {
-		return this.messageThread.getTitle();
-	}
 
 }

@@ -21,6 +21,7 @@
 	<acme:form-textarea code="consumer.offer.form.label.info" path="info"/>
 	<acme:form-money code="consumer.offer.form.label.maxMoney" path="maxMoney"/>
 	<acme:form-money code="consumer.offer.form.label.minMoney" path="minMoney"/>
+	<acme:form-textbox code="provider.offer.form.label.ticker" path="ticker" placeholder="OXXXX-99999"/>
 	<acme:form-checkbox code="consumer.offer.form.label.checkbox" path="accept"/>
 	
 	<acme:form-submit test="${command == 'create'}"
