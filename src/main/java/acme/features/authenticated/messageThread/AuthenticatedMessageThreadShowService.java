@@ -11,6 +11,7 @@ import acme.entities.userThread.UserThread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -38,6 +39,11 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Principal p = request.getPrincipal();
+		int starterId = this.repository.findStarterId(request.getModel().getInteger("id"));
+		boolean removable = starterId == this.repository.findAuthenticatedByPrincipal(p.getAccountId()).getId();
+		model.setAttribute("removable", removable);
 
 		request.unbind(entity, model, "moment", "starterUsername", "title");
 	}

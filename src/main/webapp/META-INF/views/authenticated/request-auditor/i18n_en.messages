@@ -15,5 +15,4 @@ authenticated.requestAuditor.form.label.responsibilityStatement = Responsibility
 
 authenticated.requestAuditor.form.button.create = Request
 authenticated.requestAuditor.form.button.return = Return
-
-authenticated.auditor.form.error.request = You already sent a request
+authenticated.requestAuditor.form.message = You already sent a request. Please, wait until administrator confirm it.

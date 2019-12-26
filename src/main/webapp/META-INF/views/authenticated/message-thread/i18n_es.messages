@@ -14,8 +14,11 @@ authenticated.messageThread.form.label.starterUsername = Creador:
 
 authenticated.messageThread.form.button.listMessages = Mensajes
 authenticated.messageThread.form.button.return = Volver
+authenticated.messageThread.form.button.create = Crear
+authenticated.messageThread.form.button.delete = Eliminar
 
 authenticated.messageThread.list.label.moment = Momento
 authenticated.messageThread.list.label.title = Título
+authenticated.messageThread.list.button.create = Crear Cadena
 
 authenticated.messageThread.form.button.listUsers = Listar usuarios 

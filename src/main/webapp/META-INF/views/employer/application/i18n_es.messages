@@ -17,7 +17,6 @@ employer.application.form.label.qualifications = Calificaciones:
 employer.application.form.label.accept = Aceptar Solicitud
 employer.application.form.label.reject = Rechazar Solicitud
 employer.application.form.label.justification = Justificación
-employer.application.form.error.acceptAndReject = "Aceptar" y "Rechazar" no pueden ser seleccionadas simultáneamente
 employer.application.form.error.reject = Debes justificar el rechazo de la solicitud
 employer.application.form.button.update = Actualizar
 employer.application.form.label.acceptReject = Aceptar o rechazar solicitud

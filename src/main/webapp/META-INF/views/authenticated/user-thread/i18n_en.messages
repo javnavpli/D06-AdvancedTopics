@@ -8,20 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.messageThread.form.label.title = Title:
-authenticated.messageThread.form.label.moment = Moment:
-authenticated.messageThread.form.label.starterUsername = Starter:
+authenticated.userThread.form.label.title = Title:
+authenticated.userThread.form.label.moment = Moment:
+authenticated.userThread.form.label.starterUsername = Starter:
 
-authenticated.messageThread.form.button.listMessages = List messages from this thread
-authenticated.messageThread.form.button.return = Return
+authenticated.userThread.form.button.return = Return
 
-authenticated.messageThread.list.label.moment = Moment
-authenticated.messageThread.list.label.title = Title
-
-authenticated.messageThread.form.button.listUsers = List users
+authenticated.userThread.list.label.title = Title
 
 authenticated.userThread.form.button.create = Add user
 authenticated.userThread.form.button.delete = Delete
-authenticated.userThread.form.label.userId = User ID
+authenticated.userThread.form.label.userToAdd = User To Add
 authenticated.userThread.form.label.messageThread = Title
 authenticated.userThread.form.label.username = Username

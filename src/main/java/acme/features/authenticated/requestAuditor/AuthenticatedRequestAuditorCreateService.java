@@ -49,12 +49,6 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 		assert entity != null;
 		assert errors != null;
 
-		RequestAuditor u = this.repository.findOneRequestAuditorByUserAccountId(request.getPrincipal().getAccountId());
-		if (!errors.hasErrors("request")) {
-			errors.state(request, u == null, "error", "authenticated.auditor.form.error.request");
-		}
-
-
 	}
 
 	@Override
@@ -71,6 +65,10 @@ public class AuthenticatedRequestAuditorCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		RequestAuditor u = this.repository.findOneRequestAuditorByUserAccountId(request.getPrincipal().getAccountId());
+		boolean mayBecome = u == null;
+		model.setAttribute("mayBecome", mayBecome);
 
 		request.unbind(entity, model, "firm", "responsibilityStatement");
 	}
