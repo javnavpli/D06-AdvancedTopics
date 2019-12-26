@@ -19,9 +19,15 @@
 	
 	<acme:form-errors path="error"/>
 
+	<jstl:if test="${mayBecome }">
 	<acme:form-textbox code="authenticated.requestAuditor.form.label.firm" path="firm"/>
 	<acme:form-textbox code="authenticated.requestAuditor.form.label.responsibilityStatement" path="responsibilityStatement"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="authenticated.requestAuditor.form.button.create" action="/authenticated/request-auditor/create"/>
+	</jstl:if>
+	
+	<jstl:if test="${!mayBecome }">
+	<acme:message code="authenticated.requestAuditor.form.message"/>
+	</jstl:if>
 	<acme:form-return code="authenticated.requestAuditor.form.button.return"/>
 </acme:form>

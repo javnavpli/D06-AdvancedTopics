@@ -34,11 +34,11 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
-		Authenticated user;
-
-		int username = (int) request.getModel().getAttribute("userToAdd");
-		user = this.repository.findAuthenticatedById(username);
-		entity.setUser(user);
+		//		Authenticated user;
+		//
+		//		int username = request.getModel().getInteger("userToAdd");
+		//		user = this.repository.findAuthenticatedById(username);
+		//		entity.setUser(user);
 
 		request.bind(entity, errors);
 	}
@@ -51,7 +51,7 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 
 		Collection<Authenticated> systemUsersToAdd = this.repository.findManyAllUsersExceptThread(request.getModel().getInteger("id"));
 		model.setAttribute("systemUsers", systemUsersToAdd);
-		model.setAttribute("userToAdd", " ");
+		model.setAttribute("userToAdd", "");
 
 		request.unbind(entity, model);
 	}
