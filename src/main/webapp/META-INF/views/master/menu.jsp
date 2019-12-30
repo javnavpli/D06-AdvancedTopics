@@ -31,9 +31,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.listAnnouncements" action="/anonymous/announcement/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.listCompaniesRecord" action="/anonymous/company-records/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.listInvestorRecord" action="/anonymous/investor-record/list"/>
-	
-			<acme:menu-separator/>
-			
 			<acme:menu-suboption code="master.menu.anonymous.listTopCompanies" action="/anonymous/company-records/list-top"/>
 			<acme:menu-suboption code="master.menu.anonymous.listTopInvestors" action="/anonymous/investor-record/list-top"/>
 		</acme:menu-option>
@@ -45,6 +42,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.listRequests" action="/authenticated/request-entity/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listOffers" action="/authenticated/offer/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listChallenge" action="/authenticated/challenge/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.listJobs" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.listMessageThreads" action="/authenticated/message-thread/list-mine"/>
 			<acme:menu-suboption code="master.menu.authenticated.message-thread.create" action="/authenticated/message-thread/create"/>
@@ -52,11 +50,16 @@
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.listAnnouncement" action="/administrator/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/show"/>
+			<acme:menu-suboption code="master.menu.administrator.listData" action="/administrator/list-data/list-mine"/>
+			<acme:menu-suboption code="master.menu.administrator.companyRecordsChart" action="/administrator/companies-investors-chart/chart"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.companyRecords" action="/administrator/company-records/list"/>
 			<acme:menu-suboption code="master.menu.administrator.investorRecord" action="/administrator/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.listChallenge" action="/administrator/challenge/list"/>
 			<acme:menu-suboption code="master.menu.administrator.commercial-banner" action="/administrator/commercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.non-commercial-banner" action="/administrator/non-commercial-banner/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.listRequestAuditor" action="/administrator/request-auditor/list"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
      		<acme:menu-suboption code="master.menu.administrator.jobsApplicationsChart" action="/administrator/jobs-application-chart/chart"/>
@@ -64,11 +67,6 @@
       		<acme:menu-suboption code="master.menu.administrator.listDataEmployerWorker" action="/administrator/list-data-employer-worker/list-mine"/>
 			
 			<acme:menu-separator/>
-      		<acme:menu-suboption code="master.menu.administrator.listData" action="/administrator/list-data/list-mine"/>
-			<acme:menu-suboption code="master.menu.administrator.companyRecordsChart" action="/administrator/companies-investors-chart/chart"/>
-			      
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/show"/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 			
 		</acme:menu-option>

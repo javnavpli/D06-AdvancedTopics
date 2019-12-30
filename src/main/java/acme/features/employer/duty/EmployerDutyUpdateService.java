@@ -29,7 +29,7 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		int idJob = this.repository.findOneJobByDutyId(request.getModel().getInteger("id"));
 		Job j = this.repository.findOneJobById(idJob);
 
-		return !j.isFinalMode();
+		return !j.getFinalMode();
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.requestEntity;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,10 @@ public class AuthenticatedRequestEntityShowService implements AbstractShowServic
 	public boolean authorise(final Request<RequestEntity> request) {
 		assert request != null;
 
-		return true;
+		Date currentDate = new Date(System.currentTimeMillis());
+		Date deadline = this.repository.findDeadlineById(request.getModel().getInteger("id"));
+
+		return currentDate.before(deadline);
 	}
 
 	@Override

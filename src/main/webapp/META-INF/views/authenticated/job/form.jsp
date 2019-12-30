@@ -29,7 +29,7 @@
 	
 	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Worker') == true}"
 		code="worker.application.form.button.create"
-		action="/worker/application/create?jobid=${id}"
+		action="/worker/application/create?id=${id}"
 		method="get"/>
 		
 	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Auditor') == true}"

@@ -32,7 +32,6 @@ public class AnonymousAnnouncementListService implements AbstractListService<Ano
 
 	@Override
 	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;

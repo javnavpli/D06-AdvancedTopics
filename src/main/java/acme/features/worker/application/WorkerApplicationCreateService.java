@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import acme.datatypes.ApplicationStatus;
 import acme.entities.applications.Application;
 import acme.entities.jobs.Job;
-import acme.entities.roles.Employer;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -35,13 +34,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		boolean result = true;
 		Principal principal = request.getPrincipal();
-
-		String jobIdString = request.getServletRequest().getQueryString().split("jobid=")[1];
-
-		int jobId = Integer.parseInt(jobIdString);
+		int jobId = request.getModel().getInteger("id");
 
 		Collection<Application> applications = this.repository.findManyByWorkerId(principal.getActiveRoleId());
-
 		for (Application a : applications) {
 			if (a.getJob().getId() == jobId) {
 				result = false;
@@ -50,15 +45,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		}
 
 		Job job = this.repository.findJobById(jobId);
-
 		if (job.getStatus().equals("Draft")) {
 			result = false;
 		}
 
 		Date moment;
-
 		moment = new Date(System.currentTimeMillis() - 1);
-
 		if (job.getDeadline().before(moment)) {
 			result = false;
 		}
@@ -73,7 +65,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "referenceNumber", "moment", "status", "worker", "job", "skills", "qualifications");
+		request.bind(entity, errors, "moment", "status", "worker", "job", "skills", "qualifications");
 
 	}
 
@@ -91,7 +83,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		entity.setSkills(worker.getSkillsRecord());
 		entity.setQualifications(worker.getQualificationsRecord());
 
-		request.unbind(entity, model, "statement", "skills", "qualifications");
+		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications");
 
 	}
 
@@ -111,10 +103,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		result.setWorker(worker);
 
 		//Job
-		String jobIdString = request.getServletRequest().getQueryString().split("jobid=")[1];
-
-		int jobId = Integer.parseInt(jobIdString);
-
+		int jobId = request.getModel().getInteger("id");
 		Job job = this.repository.findJobById(jobId);
 		result.setJob(job);
 
@@ -124,36 +113,10 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		result.setMoment(moment);
 
 		//Skills
-		result.setSkills(worker.getSkillsRecord());
+		//		result.setSkills(worker.getSkillsRecord());
 
 		//Qualifications
-		result.setQualifications(worker.getQualificationsRecord());
-
-		//Reference number
-		Employer employer = job.getEmployer();
-		String employerId = "" + employer.getId();
-
-		String workerId = "" + worker.getId();
-
-		while (employerId.length() < 3) {
-			employerId = "0" + employerId;
-		}
-
-		while (workerId.length() < 3) {
-			workerId = "0" + workerId;
-		}
-
-		while (jobIdString.length() < 3) {
-			jobIdString = "0" + jobIdString;
-		}
-
-		String emp = "E" + employerId.substring(employerId.length() - 3, employerId.length());
-		String wor = "W" + workerId.substring(workerId.length() - 3, workerId.length());
-		String jobb = "J" + jobIdString.substring(jobIdString.length() - 3, jobIdString.length());
-
-		String rNumber = emp + "-" + wor + ":" + jobb;
-
-		result.setReferenceNumber(rNumber);
+		//		result.setQualifications(worker.getQualificationsRecord());
 
 		return result;
 	}

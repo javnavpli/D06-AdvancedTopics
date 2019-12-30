@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.announcement;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,10 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
 
-		return true;
+		Date currentDate = new Date(System.currentTimeMillis());
+		Date moment = this.repository.findMomentById(request.getModel().getInteger("id"));
+
+		return currentDate.after(moment);
 	}
 
 	@Override

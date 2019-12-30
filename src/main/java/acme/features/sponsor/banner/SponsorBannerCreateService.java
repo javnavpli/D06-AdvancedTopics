@@ -79,7 +79,6 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 		sponsor = this.repository.findOneSponsorById(sponsorId);
 
 		result = new CommercialBanner();
-		result.setSponsor(sponsor);
 		CreditCard creditCard = sponsor.getCreditCard();
 		result.setCreditCard(creditCard);
 

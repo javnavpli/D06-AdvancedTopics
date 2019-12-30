@@ -30,7 +30,7 @@ public class CreditCard extends DomainEntity {
 	private String				deadline;
 
 	@NotBlank
-	@Pattern(regexp = "5[1-5][0-9]{14}$")
+	@Pattern(regexp = "^5[1-5][0-9]{14}$")
 	private String				number;
 
 	@NotBlank

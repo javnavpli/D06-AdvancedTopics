@@ -32,7 +32,6 @@ public class AuthenticatedRequestEntityListService implements AbstractListServic
 
 	@Override
 	public void unbind(final Request<RequestEntity> request, final RequestEntity entity, final Model model) {
-		// TODO Auto-generated method stub
 		assert request != null;
 		assert entity != null;
 		assert model != null;

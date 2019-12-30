@@ -57,7 +57,7 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				qualifications;
 
-	//	private String				justification;
+	private String				justification;
 
 	@NotNull
 	@Valid

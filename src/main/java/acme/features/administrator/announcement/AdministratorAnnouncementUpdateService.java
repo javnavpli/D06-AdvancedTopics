@@ -1,8 +1,6 @@
 
 package acme.features.administrator.announcement;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,10 +71,6 @@ public class AdministratorAnnouncementUpdateService implements AbstractUpdateSer
 		assert request != null;
 		assert entity != null;
 
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
 		this.repository.save(entity);
 	}
 }
