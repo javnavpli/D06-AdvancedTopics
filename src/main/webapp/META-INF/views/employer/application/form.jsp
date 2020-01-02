@@ -34,7 +34,7 @@
 	<acme:form-submit test="${command == 'show'}"
 		code="employer.application.form.button.update"
 		action="/employer/application/update"/>
-	<acme:form-submit test="${command == 'update'}"
+	<acme:form-submit test="${command == 'update' && upgradeable}"
 		code="employer.application.form.button.update"
 		action="/employer/application/update"/>
 	

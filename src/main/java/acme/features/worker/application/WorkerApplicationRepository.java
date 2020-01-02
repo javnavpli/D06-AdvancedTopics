@@ -2,6 +2,7 @@
 package acme.features.worker.application;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -28,5 +29,8 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Application a where a.referenceNumber = ?1")
 	Collection<Application> findManyByRnumber(String rNumber);
+
+	@Query("select a.referenceNumber from Application a")
+	List<String> findReferences();
 
 }

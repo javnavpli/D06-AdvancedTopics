@@ -1,5 +1,5 @@
 
-package acme.features.sponsor.banner;
+package acme.features.sponsor.commercialBanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,13 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		int sponsorId = request.getPrincipal().getActiveRoleId();
+		Sponsor sponsor = this.repository.findOneSponsorById(sponsorId);
+
+		boolean res = sponsor.getCreditCard() != null;
+		res = res && this.repository.findSponsorByCommercialBannerId(request.getModel().getInteger("id")) == sponsorId;
+
+		return res;
 	}
 
 	@Override

@@ -56,7 +56,6 @@ public class Job extends DomainEntity {
 	@URL
 	private String					moreInfo;
 
-	@NotBlank
 	private String					description;
 
 	@OneToMany(mappedBy = "job")

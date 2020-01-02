@@ -1,35 +1,37 @@
 
-package acme.features.sponsor.banner;
+package acme.features.sponsor.commercialBanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banner.CommercialBanner;
+import acme.entities.creditCard.CreditCard;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
-import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.components.Response;
-import acme.framework.helpers.PrincipalHelper;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.entities.Principal;
+import acme.framework.services.AbstractCreateService;
 
 @Service
-public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor, CommercialBanner> {
+public class SponsorBannerCreateService implements AbstractCreateService<Sponsor, CommercialBanner> {
 
-	//Internal state ---------------------------------------------------------
+	//Internal state -----------------------------------
 
 	@Autowired
 	private SponsorBannerRepository repository;
 
 
-	//AbstractUpdateService<Sponsor, CommercialBanner> interface --------------
+	//AbstractCreateService<Sponsoor, Banner> interface --------
 
 	@Override
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		int sponsorId = request.getPrincipal().getActiveRoleId();
+		Sponsor sponsor = this.repository.findOneSponsorById(sponsorId);
+
+		return sponsor.getCreditCard() != null;
 	}
 
 	@Override
@@ -52,17 +54,21 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 	}
 
 	@Override
-	public CommercialBanner findOne(final Request<CommercialBanner> request) {
+	public CommercialBanner instantiate(final Request<CommercialBanner> request) {
 		assert request != null;
 
 		CommercialBanner result;
+		Principal principal;
+		int sponsorId;
+		Sponsor sponsor;
 
-		int id;
-		id = request.getModel().getInteger("id");
+		principal = request.getPrincipal();
+		sponsorId = principal.getActiveRoleId();
+		sponsor = this.repository.findOneSponsorById(sponsorId);
 
-
-		result = this.repository.findOneCommercialBannerById(id);
-
+		result = new CommercialBanner();
+		CreditCard creditCard = sponsor.getCreditCard();
+		result.setCreditCard(creditCard);
 
 		return result;
 	}
@@ -98,21 +104,11 @@ public class SponsorBannerUpdateService implements AbstractUpdateService<Sponsor
 	}
 
 	@Override
-	public void update(final Request<CommercialBanner> request, final CommercialBanner entity) {
+	public void create(final Request<CommercialBanner> request, final CommercialBanner entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
-	}
-
-	@Override
-	public void onSuccess(final Request<CommercialBanner> request, final Response<CommercialBanner> response) {
-		assert request != null;
-		assert response != null;
-
-		if (request.isMethod(HttpMethod.POST)) {
-			PrincipalHelper.handleUpdate();
-		}
 	}
 
 }

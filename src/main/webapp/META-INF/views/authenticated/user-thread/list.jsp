@@ -5,7 +5,7 @@
 
 
 <acme:list>
-	<acme:list-column code="authenticated.userThread.list.label.title" path="userUsername" width="50%"/>
+	<acme:list-column code="authenticated.userThread.list.label.user" path="userUsername" width="50%"/>
 </acme:list>
 
 <acme:form>

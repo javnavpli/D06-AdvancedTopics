@@ -36,6 +36,9 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		assert entity != null;
 		assert model != null;
 
+		boolean upgradeable = this.repository.findOneApplicationById(request.getModel().getInteger("id")).getVersion() == 0;
+		model.setAttribute("upgradeable", upgradeable);
+
 		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "status");
 	}
 

@@ -9,5 +9,5 @@
 </acme:list>
 
 <acme:form>
-	<acme:form-submit test="${ canCreate}" code="sponsor.commercial-banner.list.button.create" action="/sponsor/commercial-banner/create" method="get"/>
+	<acme:form-submit code="sponsor.non-commercial-banner.list.button.create" action="/sponsor/non-commercial-banner/create" method="get"/>
 </acme:form>

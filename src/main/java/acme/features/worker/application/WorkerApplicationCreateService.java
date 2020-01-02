@@ -3,6 +3,7 @@ package acme.features.worker.application;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,7 +66,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "moment", "status", "worker", "job", "skills", "qualifications");
+		request.bind(entity, errors, "moment", "status", "worker", "job");
 
 	}
 
@@ -112,12 +113,6 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		moment = new Date(System.currentTimeMillis() - 1);
 		result.setMoment(moment);
 
-		//Skills
-		//		result.setSkills(worker.getSkillsRecord());
-
-		//Qualifications
-		//		result.setQualifications(worker.getQualificationsRecord());
-
 		return result;
 	}
 
@@ -126,6 +121,11 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("referenceNumber")) {
+			List<String> referenceCodes = this.repository.findReferences();
+			errors.state(request, !referenceCodes.contains(entity.getReferenceNumber()), "referenceNumber", "worker.application.form.error.reference");
+		}
 	}
 
 	@Override

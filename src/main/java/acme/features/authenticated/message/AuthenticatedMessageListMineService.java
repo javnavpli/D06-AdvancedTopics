@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.message.Message;
-import acme.entities.userThread.UserThread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -27,9 +26,9 @@ public class AuthenticatedMessageListMineService implements AbstractListService<
 	@Override
 	public boolean authorise(final Request<Message> request) {
 
-		Collection<UserThread> ut = this.repository.findOneMessageThreadById(request.getModel().getInteger("id")).getUsers();
+		Collection<Integer> ut = this.repository.findManyUserThreadId(request.getModel().getInteger("id"));
 
-		return ut.stream().anyMatch(x -> x.getUser().equals(request.getPrincipal().getActiveRole()));
+		return ut.contains(request.getPrincipal().getActiveRoleId());
 	}
 
 	@Override

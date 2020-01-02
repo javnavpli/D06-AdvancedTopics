@@ -51,7 +51,7 @@ public class AuthenticatedMessageThreadDeleteService implements AbstractDeleteSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "moment", "starterUsername", "title");
+		request.unbind(entity, model, "moment", "title");
 	}
 
 	@Override

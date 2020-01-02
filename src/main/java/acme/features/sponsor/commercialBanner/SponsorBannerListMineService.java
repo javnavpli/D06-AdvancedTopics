@@ -1,5 +1,5 @@
 
-package acme.features.sponsor.banner;
+package acme.features.sponsor.commercialBanner;
 
 import java.util.Collection;
 
@@ -10,7 +10,6 @@ import acme.entities.banner.CommercialBanner;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -28,6 +27,10 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
+		int sponsorId = request.getPrincipal().getActiveRoleId();
+		boolean canCreate = false;
+		canCreate = this.repository.findCreditCardBySponsorId(sponsorId) != null;
+		request.getModel().setAttribute("canCreate", canCreate);
 		return true;
 	}
 
@@ -37,6 +40,11 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 		assert entity != null;
 		assert model != null;
 
+		int sponsorId = request.getPrincipal().getActiveRoleId();
+		boolean canCreate = false;
+		canCreate = this.repository.findCreditCardBySponsorId(sponsorId) != null;
+		request.getModel().setAttribute("canCreate", canCreate);
+		model.setAttribute("canCreate", canCreate);
 		request.unbind(entity, model, "picture", "url");
 	}
 
@@ -45,10 +53,8 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 		assert request != null;
 
 		Collection<CommercialBanner> result;
-		Principal principal;
-
-		principal = request.getPrincipal();
-		result = this.repository.findManyBySponsorId(principal.getActiveRoleId());
+		int sponsorId = request.getPrincipal().getActiveRoleId();
+		result = this.repository.findManyBySponsorId(sponsorId);
 
 		return result;
 	}

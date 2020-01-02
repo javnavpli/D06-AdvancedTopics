@@ -18,7 +18,6 @@
 <acme:form>
 	<jstl:if test="${command != 'create' }">
 		<acme:form-textbox code="authenticated.userThread.form.label.username" path="userUsername" readonly="true"/>
-		<acme:form-textbox code="authenticated.userThread.form.label.messageThread" path="messageThreadTitle" readonly="true"/>
 	</jstl:if>
 	
 	<jstl:if test="${command == 'create' }">
@@ -34,7 +33,7 @@
 		code = "authenticated.userThread.form.button.create"
 		action="/authenticated/user-thread/create?${pageContext.request.queryString}"/>
 		
-	<acme:form-submit test="${command != 'create'}"
+	<acme:form-submit test="${command != 'create' && removable}"
 		code = "authenticated.userThread.form.button.delete"
 		action="/authenticated/user-thread/delete"/>
 		

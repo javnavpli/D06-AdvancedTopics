@@ -28,8 +28,14 @@ public interface AuthenticatedUserThreadRepository extends AbstractRepository {
 
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findAuthenticatedById(int i);
-	//	@Query("select a from Authenticated a except (select au from Authenticated au where au.id = (select ut.user.id from userThread ut where ut.messageThread.id = ?1 ))")
+
 	@Query("select a from Authenticated a where a.id NOT IN (select ut.user.id from UserThread ut where ut.messageThread.id = ?1)")
 	Collection<Authenticated> findManyAllUsersExceptThread(int id);
+
+	@Query("select mt.starter.id from MessageThread mt where mt.id = (select ut.messageThread.id from UserThread ut where ut.id = ?1)")
+	Integer findStarterMessageThread(int id);
+
+	@Query("select ut.user.id from UserThread ut where ut.id = ?1")
+	Integer findAuthenticatedByUTId(int i);
 
 }

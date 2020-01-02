@@ -97,8 +97,8 @@ master.menu.employer.job.list = My Jobs
 master.menu.sponsor = Sponsor
 
 
-master.menu.sponsor.banner.list = List banners
-master.menu.sponsor.banner.create = Create Banner
+master.menu.sponsor.banner.list = List Commercial Banners
+master.menu.sponsor.nonCommercialBanner.list = List Non Commercial Banners
 
 
 # master.menu.provider ########################################################

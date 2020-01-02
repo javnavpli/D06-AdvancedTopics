@@ -24,15 +24,15 @@
 		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
 	</jstl:if>
 
+	<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber"/>
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement"/>
-
-	<acme:form-textarea code="worker.application.form.label.skills" path="skills" readonly="true"/>
-	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" readonly="true"/>
+	<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
+	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
 
 	
 	<acme:form-submit test="${command == 'create'}"
 			code='worker.application.form.button.create'
-			action='/worker/application/create' />
+			action='/worker/application/create?${pageContext.request.queryString}' />
 
 	<acme:form-return code="worker.application.form.button.return"/>
 	

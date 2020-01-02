@@ -15,6 +15,7 @@ sponsor.commercial-banner.form.label.slogan = Eslogan
 sponsor.commercial-banner.list.label.picture = URL de la imagen
 sponsor.commercial-banner.list.label.url = URL
 sponsor.commercial-banner.list.button.create = Crear
+sponsor.commercial-banner.list.button.mustRegisterCC = Debes registrar una tarjeta de crédito para poder crear un banner comercial
 
 sponsor.commercial-banner.form.button.create = Crear
 sponsor.commercial-banner.form.button.update = Actualizar

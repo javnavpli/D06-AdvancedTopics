@@ -38,4 +38,10 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 	@Query("select s.englishWords from Spam s")
 	String findEnglishWords();
 
+	@Query("select ut.user.id from UserThread ut where ut.messageThread.id = ?1")
+	Collection<Integer> findManyUserThreadId(int mtId);
+
+	@Query("select ut.user.id from UserThread ut where ut.messageThread.id = (select m.messageThread.id from Message m where m.id = ?1)")
+	Collection<Integer> findManyUserThreadIdByMessage(int mId);
+
 }

@@ -15,3 +15,4 @@ authenticated.duty.form.button.return = Return
 
 authenticated.duty.list.label.title = Title
 authenticated.duty.list.label.timexWeek = Time per Week
+authenticated.duty.list.button.return = Return

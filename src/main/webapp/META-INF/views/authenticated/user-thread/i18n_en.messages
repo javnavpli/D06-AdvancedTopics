@@ -14,7 +14,7 @@ authenticated.userThread.form.label.starterUsername = Starter:
 
 authenticated.userThread.form.button.return = Return
 
-authenticated.userThread.list.label.title = Title
+authenticated.userThread.list.label.user = Username
 
 authenticated.userThread.form.button.create = Add user
 authenticated.userThread.form.button.delete = Delete

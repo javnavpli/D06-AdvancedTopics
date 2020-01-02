@@ -8,3 +8,7 @@
 	<acme:list-column code="authenticated.duty.list.label.timexWeek" path="timexWeek" width="20%"/>
 	
 </acme:list>
+
+<acme:form>
+	<acme:form-return code="authenticated.duty.list.button.return"/>
+</acme:form>

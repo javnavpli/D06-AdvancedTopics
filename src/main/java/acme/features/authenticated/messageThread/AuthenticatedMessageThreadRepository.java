@@ -32,4 +32,7 @@ public interface AuthenticatedMessageThreadRepository extends AbstractRepository
 	@Query("select ut from UserThread ut where ut.messageThread.id = ?1")
 	Collection<UserThread> findManyUserThread(int authId);
 
+	@Query("select ut.user.id from UserThread ut where ut.messageThread.id = ?1")
+	Collection<Integer> findManyUserThreadId(int mtId);
+
 }

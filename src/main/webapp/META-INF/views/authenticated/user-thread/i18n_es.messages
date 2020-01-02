@@ -14,7 +14,7 @@ authenticated.userThread.form.label.starterUsername = Creador:
 
 authenticated.userThread.form.button.return = Volver
 
-authenticated.userThread.list.label.title = Título
+authenticated.userThread.list.label.user = Nombre de usuario
 
 authenticated.userThread.form.button.create = Añadir usuario
 authenticated.userThread.form.button.delete = Eliminar usuario

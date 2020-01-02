@@ -34,8 +34,9 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		Collection<Application> applicationsEmployer = this.repository.findManyByEmployerId(id);
 		int idApplication = request.getModel().getInteger("id");
 		Application application = this.repository.findOneApplicationById(idApplication);
+		boolean upgradeable = this.repository.findOneApplicationById(request.getModel().getInteger("id")).getVersion() == 0;
 
-		return applicationsEmployer.contains(application);
+		return applicationsEmployer.contains(application) && upgradeable;
 	}
 
 	@Override

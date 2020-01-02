@@ -150,4 +150,5 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		this.repository.save(entity);
 	}
+
 }

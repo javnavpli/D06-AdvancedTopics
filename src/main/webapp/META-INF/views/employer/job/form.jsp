@@ -19,7 +19,7 @@
 <acme:form>
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
 	<acme:check-access test="${command != 'create' }">
-		<acme:form-textbox code="employer.job.form.label.status" path="status"/>
+		<acme:form-checkbox code="employer.job.form.label.status" path="finalMode"/>
 	</acme:check-access>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
@@ -31,14 +31,14 @@
 	<acme:form-submit test="${command == 'create'}"
 		code="employer.job.form.button.createJob"
 		action="/employer/job/create"/>
-	<acme:check-access test="${finalMode == false }">
+	<acme:check-access test="${ upgradeable }">
 		<acme:form-submit test="${command == 'show'}"
-		code="employer.job.form.button.update"
-		action="/employer/job/update"/>
+			code="employer.job.form.button.update"
+			action="/employer/job/update"/>
+		<acme:form-submit test="${command == 'update'}"
+			code="employer.job.form.button.update"
+			action="/employer/job/update"/>
 	</acme:check-access>
-	<acme:form-submit test="${command == 'update'}"
-		code="employer.job.form.button.update"
-		action="/employer/job/update"/>
 		
 	<acme:check-access test="${ removable }">
 		<acme:form-submit test="${command == 'show'}"
@@ -51,7 +51,7 @@
 		
 	<acme:check-access test="${command == 'show'}">
 		<acme:form-submit code="employer.job.form.button.listDuties" method="get" action="/employer/duty/list?${pageContext.request.queryString}" />
-		<acme:check-access test="${ finalMode == false}">
+		<acme:check-access test="${ upgradeable}">
 			<acme:form-submit code="employer.job.form.button.createDuties" method="get" action="/employer/duty/create?${pageContext.request.queryString}" />
 		</acme:check-access>
 	</acme:check-access>

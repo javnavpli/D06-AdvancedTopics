@@ -27,7 +27,7 @@
 	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
 	
 	
-	<acme:form-submit test="${principal.hasRole('acme.entities.roles.Worker') == true}"
+	<acme:form-submit test="${ applicable}"
 		code="worker.application.form.button.create"
 		action="/worker/application/create?id=${id}"
 		method="get"/>

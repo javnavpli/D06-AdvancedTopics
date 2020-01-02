@@ -34,7 +34,14 @@ public class AuthenticatedUserThreadShowService implements AbstractShowService<A
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "userUsername", "messageThreadTitle");
+		int userThreadID = request.getModel().getInteger("id");
+		int activeRoleID = request.getPrincipal().getActiveRoleId();
+		int starter = this.repository.findStarterMessageThread(userThreadID);
+		boolean removable = starter == activeRoleID;
+		removable = removable && this.repository.findAuthenticatedByUTId(userThreadID) != activeRoleID;
+		model.setAttribute("removable", removable);
+
+		request.unbind(entity, model, "userUsername");
 	}
 
 	@Override

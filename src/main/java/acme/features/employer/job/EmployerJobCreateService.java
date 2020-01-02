@@ -59,6 +59,8 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		Employer e = this.repository.findEmployerById(principal.getActiveRoleId());
 		result.setEmployer(e);
 
+		result.setFinalMode(false);
+
 		return result;
 	}
 
@@ -83,8 +85,6 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 	public void create(final Request<Job> request, final Job entity) {
 		assert request != null;
 		assert entity != null;
-
-		entity.setFinalMode(false);
 
 		this.repository.save(entity);
 	}

@@ -36,10 +36,13 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
-		Boolean removable = this.repository.findApplicationsByJobId(request.getModel().getInteger("id")) == null;
+		boolean removable = this.repository.findApplicationsByJobId(request.getModel().getInteger("id")).isEmpty();
 		model.setAttribute("removable", removable);
 
-		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "status");
+		boolean upgradeable = !this.repository.findOneJobById(request.getModel().getInteger("id")).getFinalMode();
+		model.setAttribute("upgradeable", upgradeable);
+
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "finalMode");
 
 	}
 
