@@ -15,7 +15,6 @@ authenticated.audit-record.form.label.body = Body:
 authenticated.audit-records.form.button.return = Return
 
 authenticated.audit-record.list.label.title = Title
-authenticated.audit-record.list.label.moreInfo = More Information
 authenticated.audit-record.list.label.moment = Moment
 authenticated.audit-record.list.label.body = Body
 

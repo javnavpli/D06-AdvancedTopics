@@ -22,19 +22,21 @@
 	<acme:form-textbox readonly="true" code="employer.application.form.label.statement" path="statement"/>
 	<acme:form-textarea readonly="true" code="employer.application.form.label.skills" path="skills"/>
 	<acme:form-textarea readonly="true" code="employer.application.form.label.qualifications" path="qualifications"/>
-	<acme:form-select code="employer.application.form.label.acceptReject" path="acceptReject">
-		<acme:form-option code="employer.application.form.label.accept" value="accept"/>
-		<acme:form-option code="employer.application.form.label.reject" value="reject"/>
-	</acme:form-select>
-	<acme:form-textarea code="employer.application.form.label.justification" path="justification"/>
+	<acme:check-access test="${upgradeable || command == 'update'}">
+		<acme:form-select code="employer.application.form.label.acceptReject" path="acceptReject">
+			<acme:form-option code="employer.application.form.label.accept" value="accept"/>
+			<acme:form-option code="employer.application.form.label.reject" value="reject"/>
+		</acme:form-select>
+		<acme:form-textarea code="employer.application.form.label.justification" path="justification"/>
+	</acme:check-access>
 	
 	<acme:form-submit test="${command == 'listMine'}" 
 		code="employer.application.form.button.listMine" 
 		action="/employer/application/listMine"/>
-	<acme:form-submit test="${command == 'show'}"
+	<acme:form-submit test="${command == 'show' && upgradeable}"
 		code="employer.application.form.button.update"
 		action="/employer/application/update"/>
-	<acme:form-submit test="${command == 'update' && upgradeable}"
+	<acme:form-submit test="${command == 'update'}"
 		code="employer.application.form.button.update"
 		action="/employer/application/update"/>
 	

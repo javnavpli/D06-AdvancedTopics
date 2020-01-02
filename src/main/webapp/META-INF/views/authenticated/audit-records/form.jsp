@@ -17,7 +17,6 @@
 
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.audit-record.form.label.title" path="title"/>
-	<acme:form-textbox code="authenticated.audit-record.form.label.moreInfo" path="moreInformation"/>
 	<acme:form-moment code="authenticated.audit-record.form.label.moment" path="moment"/>
 	<acme:form-textarea code="authenticated.audit-record.form.label.body" path="body"/>
 	
