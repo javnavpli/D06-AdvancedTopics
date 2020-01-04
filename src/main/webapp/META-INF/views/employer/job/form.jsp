@@ -18,7 +18,7 @@
 
 <acme:form>
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
-	<acme:check-access test="${command != 'create' }">
+	<acme:check-access test="${command != 'create' && upgradeable}">
 		<acme:form-checkbox code="employer.job.form.label.status" path="finalMode"/>
 	</acme:check-access>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>

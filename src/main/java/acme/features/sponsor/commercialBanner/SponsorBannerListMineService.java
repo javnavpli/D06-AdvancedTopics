@@ -27,10 +27,6 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		int sponsorId = request.getPrincipal().getActiveRoleId();
-		boolean canCreate = false;
-		canCreate = this.repository.findCreditCardBySponsorId(sponsorId) != null;
-		request.getModel().setAttribute("canCreate", canCreate);
 		return true;
 	}
 
@@ -40,11 +36,6 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 		assert entity != null;
 		assert model != null;
 
-		int sponsorId = request.getPrincipal().getActiveRoleId();
-		boolean canCreate = false;
-		canCreate = this.repository.findCreditCardBySponsorId(sponsorId) != null;
-		request.getModel().setAttribute("canCreate", canCreate);
-		model.setAttribute("canCreate", canCreate);
 		request.unbind(entity, model, "picture", "url");
 	}
 
@@ -54,7 +45,7 @@ public class SponsorBannerListMineService implements AbstractListService<Sponsor
 
 		Collection<CommercialBanner> result;
 		int sponsorId = request.getPrincipal().getActiveRoleId();
-		result = this.repository.findManyBySponsorId(sponsorId);
+		result = this.repository.findManyCCBySponsorId(sponsorId);
 
 		return result;
 	}

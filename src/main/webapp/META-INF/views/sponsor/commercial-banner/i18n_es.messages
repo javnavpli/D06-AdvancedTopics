@@ -11,11 +11,15 @@
 sponsor.commercial-banner.form.label.picture = URL de la imagen
 sponsor.commercial-banner.form.label.url = URL
 sponsor.commercial-banner.form.label.slogan = Eslogan
+sponsor.commercial-banner.form.label.ccHoler = Titular Tarjeta de Crédito
+sponsor.commercial-banner.form.label.ccBrand = Marca Tarjeta de Crédito
+sponsor.commercial-banner.form.label.ccDeadline = Caducidad Tarjeta de Crédito
+sponsor.commercial-banner.form.label.ccNumber = Numero Tarjeta de Crédito
+sponsor.commercial-banner.form.label.ccCcv = CVV Tarjeta de Crédito
 
 sponsor.commercial-banner.list.label.picture = URL de la imagen
 sponsor.commercial-banner.list.label.url = URL
 sponsor.commercial-banner.list.button.create = Crear
-sponsor.commercial-banner.list.button.mustRegisterCC = Debes registrar una tarjeta de crédito para poder crear un banner comercial
 
 sponsor.commercial-banner.form.button.create = Crear
 sponsor.commercial-banner.form.button.update = Actualizar
@@ -24,3 +28,9 @@ sponsor.commercial-banner.form.button.delete = Borrar
 sponsor.commercial-banner.form.button.return = Volver
 
 sponsor.banner.form.error.spam = Este eslogan está considerado spam
+sponsor.banner.form.error.deadlineIncorrect = Esto debe ser una fecha no vacía
+sponsor.banner.form.error.deadline = La fecha de caducidad debe estar en el futuro
+sponsor.banner.form.error.deadlinePattern = La fecha de caducidad no está en el formato MM/YY
+sponsor.banner.form.error.numberPattern = El número de tarjeta no está en el formato 5[1-5][0-9]{14}$
+sponsor.banner.form.error.cvvPattern = El CVV no está en el formato ^\\d{3,4}$
+sponsor.banner.form.error.noCreditCard = Debes registrar una tarjeta de crédito para poder crear un banner comercial

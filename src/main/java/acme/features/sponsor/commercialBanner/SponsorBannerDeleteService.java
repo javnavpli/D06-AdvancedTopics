@@ -1,6 +1,8 @@
 
 package acme.features.sponsor.commercialBanner;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +42,7 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creditCard", "sponsor");
+		request.bind(entity, errors, "sponsor");
 	}
 
 	@Override
@@ -49,7 +51,7 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "url", "slogan");
+		request.unbind(entity, model, "picture", "url", "slogan", "creditCard.holder", "creditCard.brand", "creditCard.deadline", "creditCard.number", "creditCard.cvv");
 	}
 
 	@Override
@@ -77,7 +79,11 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 		assert request != null;
 		assert entity != null;
 
+		List<Integer> cbanners = this.repository.findCBWithCreditCard(request.getModel().getInteger("id"));
 		this.repository.delete(entity);
+		if (cbanners.size() == 1) {
+			this.repository.delete(entity.getCreditCard());
+		}
 	}
 
 }

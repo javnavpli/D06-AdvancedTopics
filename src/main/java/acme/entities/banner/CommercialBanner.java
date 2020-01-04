@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.creditCard.CreditCard;
+import acme.entities.roles.Sponsor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,5 +41,10 @@ public class CommercialBanner extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private CreditCard			creditCard;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Sponsor				sponsor;
 
 }

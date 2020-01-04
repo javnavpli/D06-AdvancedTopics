@@ -25,8 +25,9 @@ public class SponsorBannerShowService implements AbstractShowService<Sponsor, Co
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		int sponsorId = request.getPrincipal().getActiveRoleId();
 
+		return this.repository.findSponsorByCommercialBannerId(request.getModel().getInteger("id")) == sponsorId;
 	}
 
 	@Override
@@ -35,7 +36,7 @@ public class SponsorBannerShowService implements AbstractShowService<Sponsor, Co
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "url", "slogan");
+		request.unbind(entity, model, "picture", "url", "slogan", "creditCard.holder", "creditCard.brand", "creditCard.deadline", "creditCard.number", "creditCard.cvv");
 	}
 
 	@Override

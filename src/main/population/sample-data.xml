@@ -530,7 +530,7 @@
 		<property name="holder" value="Amanda Rios Ruiz" />
 		<property name="brand" value="MasterCard" />
 		<property name="deadline" value="03/26"/>
-		<property name="number" value="5137984536590257" />
+		<property name="number" value="5137984536590258" />
 		<property name="cvv" value="254" />
 	</bean>
 	
@@ -538,7 +538,7 @@
 		<property name="holder" value="Amanda Rios Ruiz" />
 		<property name="brand" value="MasterCard" />
 		<property name="deadline" value="03/26"/>
-		<property name="number" value="5137984536590257" />
+		<property name="number" value="5137984536590259" />
 		<property name="cvv" value="254" />
 	</bean>
 
@@ -568,6 +568,33 @@
 		<property name="sponsor" ref="sponsor1Sponsor" />
 	</bean>
 
+	<!-- Commercial Banners -->
+
+	<bean id="cbanner1" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://picture.com" />
+		<property name="slogan" value="Slogaaan!" />
+		<property name="url" value="http://url.com" />
+		<property name="creditCard" ref="creditCard1"/>
+		<property name="sponsor" ref="sponsor1Sponsor" />
+	</bean>
+
+	<bean id="cbanner2" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://picturepicture.com" />
+		<property name="slogan" value="Slogan!" />
+		<property name="url" value="http://urlurl.com" />
+		<property name="creditCard" ref="creditCard2"/>
+		<property name="sponsor" ref="sponsor1Sponsor" />
+	</bean>
+
+	<bean id="cbanner3" class="acme.entities.banner.CommercialBanner">
+		<property name="picture" value="http://pictures.com" />
+		<property name="slogan" value="Slogaaan again!" />
+		<property name="url" value="http://urls.com" />
+		<property name="creditCard" ref="creditCard3"/>
+		<property name="sponsor" ref="sponsor1Sponsor" />
+	</bean>
+	
+	
 	<!-- Sponsors -->
 
     <bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
@@ -597,6 +624,13 @@
                 <ref bean="ncbanner1" />
                 <ref bean="ncbanner2" />
                 <ref bean="ncbanner3" />
+            </list>
+        </property>
+        <property name="commercialBanners">
+            <list>
+                <ref bean="cbanner1" />
+                <ref bean="cbanner2" />
+                <ref bean="cbanner3" />
             </list>
         </property>
         <property name="userAccount" ref="sponsor1UserAccount" />
@@ -635,29 +669,6 @@
         <property name="userAccount" ref="sponsor2UserAccount" />
     </bean>
     
-    <!-- Commercial Banners -->
-
-	<bean id="cbanner1" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picture.com" />
-		<property name="slogan" value="Slogaaan!" />
-		<property name="url" value="http://url.com" />
-		<property name="creditCard" ref="creditCard1"/>
-	</bean>
-
-	<bean id="cbanner2" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picturepicture.com" />
-		<property name="slogan" value="Slogan!" />
-		<property name="url" value="http://urlurl.com" />
-		<property name="creditCard" ref="creditCard2"/>
-	</bean>
-
-	<bean id="cbanner3" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://pictures.com" />
-		<property name="slogan" value="Slogaaan again!" />
-		<property name="url" value="http://urls.com" />
-		<property name="creditCard" ref="creditCard2"/>
-	</bean>
-
 	<!-- Announcements -->
 
 	<bean class="acme.entities.announcements.Announcement" id="announcement1">

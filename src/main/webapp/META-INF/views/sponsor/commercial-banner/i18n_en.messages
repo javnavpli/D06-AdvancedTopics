@@ -12,11 +12,15 @@
 sponsor.commercial-banner.form.label.picture = Picture URL
 sponsor.commercial-banner.form.label.url = Target URL
 sponsor.commercial-banner.form.label.slogan = Slogan
+sponsor.commercial-banner.form.label.ccHoler = Credit Card Holder
+sponsor.commercial-banner.form.label.ccBrand = Credit Card Brand
+sponsor.commercial-banner.form.label.ccDeadline = Credit Card Deadline
+sponsor.commercial-banner.form.label.ccNumber = Credit Card Number
+sponsor.commercial-banner.form.label.ccCcv = Credit Card CVV
 
 sponsor.commercial-banner.list.label.picture = Picture URL
 sponsor.commercial-banner.list.label.url = Target URL
 sponsor.commercial-banner.list.button.create = Create
-sponsor.commercial-banner.list.button.mustRegisterCC = You have to register a credit card in order to create a commercial banner
 
 sponsor.commercial-banner.form.button.create = Create
 sponsor.commercial-banner.form.button.update = Update
@@ -24,3 +28,9 @@ sponsor.commercial-banner.form.button.delete = Delete
 
 sponsor.commercial-banner.form.button.return = Return
 sponsor.banner.form.error.spam = This slogan is considered spam
+sponsor.banner.form.error.deadlineIncorrect = This must be a non-blank date
+sponsor.banner.form.error.deadline = The deadline must be a future date
+sponsor.banner.form.error.deadlinePattern = The deadline does not match the format MM/YY
+sponsor.banner.form.error.numberPattern = The number does not match the format 5[1-5][0-9]{14}$
+sponsor.banner.form.error.cvvPattern = The cvv does not match the format ^\\d{3,4}$
+sponsor.banner.form.error.noCreditCard = You have to register a credit card in order to create a commercial banner
