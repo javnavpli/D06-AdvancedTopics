@@ -22,8 +22,6 @@ import acme.datatypes.ApplicationStatus;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
-import acme.framework.helpers.PasswordHelper;
-import acme.framework.helpers.StringHelper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -66,8 +64,7 @@ public class Application extends DomainEntity {
 
 	private String				XXX4;
 
-	@Length(max = 60)
-	@Pattern(regexp = "^((?=(.*\\d){4,})(?=(.*[a-zA-Z]){4,})(?=(.*[¿?¡!'\"_.,;:\\-\\[\\]\\*\\/]){4,}).{8,})$")
+	@Pattern(regexp = "^((?=(.*\\d){4,})(?=(.*[a-zA-Z]){4,})(?=(.*[¿?¡!'\"_.,;:\\-\\[\\]\\*\\/]){4,}).{8,}|)$")
 	private String				password;
 
 	@NotNull
@@ -79,14 +76,5 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Job					job;
-
-
-	public void setPassword(final String password) {
-		assert password == null || password.equals("") || !PasswordHelper.isEncoded(password);
-
-		if (!StringHelper.isBlank(password)) {
-			this.password = PasswordHelper.encode(password);
-		}
-	}
 
 }

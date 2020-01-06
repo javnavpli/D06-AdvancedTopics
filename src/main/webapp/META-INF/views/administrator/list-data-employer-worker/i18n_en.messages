@@ -11,3 +11,6 @@
 administrator.list-data.form.label.jobsPerEmployer = Average Jobs Per Employer
 administrator.list-data.form.label.applicationsPerEmployer = Average Applications Per Employer
 administrator.list-data.form.label.applicationsPerWorker = Average Applications Per Worker
+administrator.list-data.form.label.jobsWithXXX1 = Ratio of Jobs With XXX1
+administrator.list-data.form.label.XXX1WithXXX3 = Ratio of XXX1 With XXX3
+administrator.list-data.form.label.XXX4WithPassword = Ratio of Applications With XXX4 Protected

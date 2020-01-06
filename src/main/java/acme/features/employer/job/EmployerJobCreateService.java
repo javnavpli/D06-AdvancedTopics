@@ -46,7 +46,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo");
+		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "XXX1.text", "XXX1.XXX2");
 	}
 
 	@Override
@@ -79,6 +79,13 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			List<String> referenceCodes = this.repository.findReferences();
 			errors.state(request, !referenceCodes.contains(entity.getReference()), "reference", "employer.job.form.error.reference");
 		}
+
+		if (!errors.hasErrors("XXX1.text")) {
+			if (entity.getXXX1().getText().isEmpty()) {
+				errors.state(request, entity.getXXX1().getXXX2().isEmpty(), "XXX1.text", "employer.job.form.error.XXX1noText");
+			}
+		}
+
 	}
 
 	@Override
@@ -86,6 +93,11 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert request != null;
 		assert entity != null;
 
+		if (!entity.getXXX1().getText().isEmpty()) {
+			this.repository.save(entity.getXXX1());
+		} else {
+			entity.setXXX1(null);
+		}
 		this.repository.save(entity);
 	}
 

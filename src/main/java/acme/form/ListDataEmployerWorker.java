@@ -16,8 +16,11 @@ public class ListDataEmployerWorker implements Serializable {
 
 	//Attributes ------------------------------------------
 
-	Integer						jobsPerEmployer;
-	Integer						applicationsPerEmployer;
-	Integer						applicationsPerWorker;
+	Double						jobsPerEmployer;
+	Double						applicationsPerEmployer;
+	Double						applicationsPerWorker;
+	Double						jobsWithXXX1;
+	Double						XXX1WithXXX3;
+	Double						XXX4WithPassword;
 
 }

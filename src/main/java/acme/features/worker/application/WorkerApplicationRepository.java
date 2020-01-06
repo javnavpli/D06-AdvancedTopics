@@ -27,6 +27,9 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 	@Query("select j from Job j where j.id = ?1")
 	Job findJobById(int jobId);
 
+	@Query("select j.XXX1.id from Job j where j.id = ?1")
+	Integer findXXX1ByJobId(int jobId);
+
 	@Query("select a from Application a where a.referenceNumber = ?1")
 	Collection<Application> findManyByRnumber(String rNumber);
 

@@ -26,7 +26,7 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 	private SponsorBannerRepository repository;
 
 
-	//AbstractCreateService<Sponsoor, Banner> interface --------
+	//AbstractCreateService<Sponsor, Banner> interface --------
 
 	@Override
 	public boolean authorise(final Request<CommercialBanner> request) {
@@ -155,15 +155,7 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 		assert request != null;
 		assert entity != null;
 
-		int sponsorId = request.getPrincipal().getActiveRoleId();
-		if (this.repository.findCreditCardBySponsor(sponsorId).getBrand().equals(entity.getCreditCard().getBrand()) && this.repository.findCreditCardBySponsor(sponsorId).getCvv().equals(entity.getCreditCard().getCvv())
-			&& this.repository.findCreditCardBySponsor(sponsorId).getDeadline().equals(entity.getCreditCard().getDeadline()) && this.repository.findCreditCardBySponsor(sponsorId).getHolder().equals(entity.getCreditCard().getHolder())
-			&& this.repository.findCreditCardBySponsor(sponsorId).getNumber().equals(entity.getCreditCard().getNumber())) {
-			entity.setCreditCard(this.repository.findCreditCardBySponsor(request.getPrincipal().getActiveRoleId()));
-
-		} else {
-			this.repository.save(entity.getCreditCard());
-		}
+		this.repository.save(entity.getCreditCard());
 		this.repository.save(entity);
 	}
 

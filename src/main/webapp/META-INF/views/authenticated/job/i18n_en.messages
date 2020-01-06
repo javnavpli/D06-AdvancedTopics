@@ -16,6 +16,8 @@ authenticated.job.form.label.salary = Salary:
 authenticated.job.form.label.deadline = Deadline:
 authenticated.job.form.label.reference = Reference:
 authenticated.job.form.label.description = Description:
+authenticated.job.form.label.xxx1.text = XXX1 Text
+authenticated.job.form.label.xxx1.xxx2 = XXX1 XXX2
 authenticated.job.form.button.return = Return
 
 authenticated.job.form.button.listDuties = List Duties

@@ -57,7 +57,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode");
+		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode", "XXX1.text", "XXX1.XXX2");
 	}
 
 	@Override
@@ -140,7 +140,14 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 				}
 				errors.state(request, count == 100, "reference", "employer.job.form.error.no100");
 			}
+
+			if (!errors.hasErrors("XXX1.text")) {
+				if (entity.getXXX1().getText().isEmpty()) {
+					errors.state(request, entity.getXXX1().getXXX2().isEmpty(), "XXX1.text", "employer.job.form.error.XXX1noText");
+				}
+			}
 		}
+
 	}
 
 	@Override
@@ -148,6 +155,11 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert request != null;
 		assert entity != null;
 
+		if (!entity.getXXX1().getText().isEmpty()) {
+			this.repository.save(entity.getXXX1());
+		} else {
+			entity.setXXX1(null);
+		}
 		this.repository.save(entity);
 	}
 

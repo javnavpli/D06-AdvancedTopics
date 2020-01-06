@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.XXX1.XXX1;
 import acme.entities.applications.Application;
 import acme.entities.duty.Duty;
 import acme.entities.jobs.Job;
@@ -49,7 +50,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode");
+		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode", "XXX1.text", "XXX1.XXX2");
 	}
 
 	@Override
@@ -90,6 +91,10 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 			for (Duty d : thisJobDuties) {
 				this.repository.delete(d);
 			}
+		}
+		if (this.repository.findOneJobById(idThisJob).getXXX1() != null) {
+			XXX1 x1 = this.repository.findOneJobById(idThisJob).getXXX1();
+			this.repository.delete(x1);
 		}
 		this.repository.delete(entity);
 	}

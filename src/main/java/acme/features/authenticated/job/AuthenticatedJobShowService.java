@@ -44,7 +44,7 @@ public class AuthenticatedJobShowService implements AbstractShowService<Authenti
 			applicable = this.repository.findApplicationByPrincipalId(p.getAccountId(), jobId).isEmpty();
 		}
 		model.setAttribute("applicable", applicable);
-		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "status");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "status", "XXX1.text", "XXX1.XXX2");
 	}
 
 	@Override

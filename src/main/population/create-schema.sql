@@ -26,7 +26,11 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `xxx4` varchar(255),
+        `answer` varchar(255),
+        `justification` varchar(255),
         `moment` datetime(6),
+        `password` varchar(255),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
@@ -90,6 +94,7 @@
         `slogan` varchar(255),
         `url` varchar(255),
         `credit_card_id` integer not null,
+        `sponsor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -178,6 +183,7 @@
         `salary_amount` double precision,
         `salary_currency` varchar(255),
         `title` varchar(255),
+        `xxx1_id` integer,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -239,6 +245,7 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `url` varchar(255),
+        `sponsor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -345,6 +352,14 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `xxx1` (
+       `id` integer not null,
+        `version` integer not null,
+        `xxx2` varchar(255),
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -355,6 +370,9 @@ create index IDXnlv6ege1ixororpblu3lctiev on `application` (`reference_number`);
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
+
+    alter table `commercial_banner` 
+       add constraint UK_tnxlqvs5k2qohd925u32ycgps unique (`credit_card_id`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -412,6 +430,11 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        foreign key (`credit_card_id`) 
        references `credit_card` (`id`);
 
+    alter table `commercial_banner` 
+       add constraint `FKd0k52g7lcacefcp62kb4p9aor` 
+       foreign key (`sponsor_id`) 
+       references `sponsor` (`id`);
+
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
        foreign key (`user_account_id`) 
@@ -428,6 +451,11 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        references `user_account` (`id`);
 
     alter table `job` 
+       add constraint `FKqiwdylo69f56l90f91jjm07d7` 
+       foreign key (`xxx1_id`) 
+       references `xxx1` (`id`);
+
+    alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
@@ -441,6 +469,11 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        add constraint `FKadu47h7h56fegmk27oo1qd1fb` 
        foreign key (`starter_id`) 
        references `authenticated` (`id`);
+
+    alter table `non_commercial_banner` 
+       add constraint `FKpcpr0xb5k7s4rxv5pulstt5v9` 
+       foreign key (`sponsor_id`) 
+       references `sponsor` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

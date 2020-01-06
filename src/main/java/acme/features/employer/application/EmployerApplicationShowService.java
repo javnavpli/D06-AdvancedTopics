@@ -39,7 +39,7 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		boolean upgradeable = this.repository.findOneApplicationById(request.getModel().getInteger("id")).getVersion() == 0;
 		model.setAttribute("upgradeable", upgradeable);
 
-		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "status");
+		request.unbind(entity, model, "referenceNumber", "moment", "statement", "skills", "qualifications", "justification", "status", "answer", "XXX4", "password");
 	}
 
 	@Override

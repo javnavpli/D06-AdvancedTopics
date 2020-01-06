@@ -15,7 +15,7 @@ public interface AdministratorNonCommercialBannerRepository extends AbstractRepo
 	@Query("select c from NonCommercialBanner c where c.id = ?1")
 	NonCommercialBanner findOneById(int id);
 
-	@Query("select c from 	NonCommercialBanner c")
+	@Query("select c from NonCommercialBanner c where c.sponsor.id is null")
 	Collection<NonCommercialBanner> findManyAll();
 
 }

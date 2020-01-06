@@ -2,7 +2,6 @@
 package acme.features.sponsor.commercialBanner;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -44,8 +43,5 @@ public interface SponsorBannerRepository extends AbstractRepository {
 
 	@Query("select c from CreditCard c where c.id = (select s.creditCard.id from Sponsor s where s.id = ?1)")
 	CreditCard findCreditCardBySponsor(int id);
-
-	@Query("select c.id from CommercialBanner c where c.creditCard.id = (select cb.creditCard.id from CommercialBanner cb where cb.id = ?1)")
-	List<Integer> findCBWithCreditCard(int id);
 
 }

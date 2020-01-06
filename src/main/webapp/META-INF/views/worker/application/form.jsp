@@ -16,19 +16,21 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	
-	<jstl:if test="${command != 'create' }">
-		<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber" readonly="true" />
-		<acme:form-textbox code="worker.application.form.label.jobTitle" path="job.title" readonly="true"/>
-		<acme:form-textbox code="worker.application.form.label.status" path="status" readonly="true"/>
-		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
-	</jstl:if>
-
 	<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber"/>
+	<acme:check-access test="${command != 'create' }">
+		<acme:form-textbox code="worker.application.form.label.status" path="status" readonly="true"/>
+		<acme:check-access test="${!justification.isEmpty() && justification != null}">
+		<acme:form-textbox code="worker.application.form.label.justification" path="justification" readonly="true"/>
+		</acme:check-access>
+		<acme:form-moment code="worker.application.form.label.moment" path="moment" readonly="true"/>
+	</acme:check-access>
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
-
+	<acme:form-errors path="cantComplete"/>
+	<acme:form-textbox code="worker.application.form.label.answer" path="answer"/>
+	<acme:form-textbox code="worker.application.form.label.xxx4" path="XXX4"/>
+	<acme:form-password code="worker.application.form.label.password" path="password"/>
 	
 	<acme:form-submit test="${command == 'create'}"
 			code='worker.application.form.button.create'

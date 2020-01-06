@@ -289,6 +289,17 @@
 		<property name="currency" value="€" />
 	</bean>
 	
+	<!-- XXX1 -->
+	
+	<bean id="XXX11" class="acme.entities.XXX1.XXX1">
+		<property name="text" value="XXX1 text 1" />
+		<property name="XXX2" value="http://www.example1.com" />
+	</bean>
+	
+	<bean id="XXX12" class="acme.entities.XXX1.XXX1">
+		<property name="text" value="XXX1 text 2" />
+	</bean>
+	
 	<!-- Jobs -->
     
     <bean name="job1" class="acme.entities.jobs.Job">
@@ -307,6 +318,7 @@
 		</property>
     	<property name="finalMode" value="true" />
     	<property name="employer" ref="employer1Employer" />
+    	<property name="XXX1" ref="XXX11" />
     </bean>
     
     <bean name="job2" class="acme.entities.jobs.Job">
@@ -323,6 +335,7 @@
 		</property>
     	<property name="finalMode" value="false" />
     	<property name="employer" ref="employer1Employer" />
+    	<property name="XXX1" ref="XXX12" />
     </bean>
     
     <bean name="job3" class="acme.entities.jobs.Job">

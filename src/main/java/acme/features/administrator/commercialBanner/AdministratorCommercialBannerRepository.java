@@ -16,7 +16,7 @@ public interface AdministratorCommercialBannerRepository extends AbstractReposit
 	@Query("select c from CommercialBanner c where c.id = ?1")
 	CommercialBanner findOneCommercialBannerById(int id);
 
-	@Query("select c from CommercialBanner c")
+	@Query("select c from CommercialBanner c where c.sponsor.id is null")
 	Collection<CommercialBanner> findManyAll();
 
 	@Query("select a from Sponsor a where a.creditCard.id = ?1")

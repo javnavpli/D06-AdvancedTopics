@@ -76,15 +76,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert model != null;
 
-		Principal principal = request.getPrincipal();
-		int workerId = principal.getActiveRoleId();
-
-		Worker worker = this.repository.findWorkerById(workerId);
-
-		entity.setSkills(worker.getSkillsRecord());
-		entity.setQualifications(worker.getQualificationsRecord());
-
-		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications");
+		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "answer", "XXX4", "password");
 
 	}
 
@@ -103,6 +95,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		Worker worker = this.repository.findWorkerById(principal.getActiveRoleId());
 		result.setWorker(worker);
 
+		result.setSkills(worker.getSkillsRecord());
+		result.setQualifications(worker.getQualificationsRecord());
+
 		//Job
 		int jobId = request.getModel().getInteger("id");
 		Job job = this.repository.findJobById(jobId);
@@ -113,6 +108,10 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		moment = new Date(System.currentTimeMillis() - 1);
 		result.setMoment(moment);
 
+		//Reference
+		String reference = job.getReference() + ":WORX";
+		result.setReferenceNumber(reference);
+
 		return result;
 	}
 
@@ -122,9 +121,25 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
+		int idJob = request.getModel().getInteger("id");
+		boolean hasXXX1 = this.repository.findXXX1ByJobId(idJob) != null;
+
+		if (!hasXXX1) {
+			errors.state(request, entity.getAnswer().isEmpty() && entity.getXXX4().isEmpty() && entity.getPassword().isEmpty(), "cantComplete", "worker.application.form.error.cantComplete");
+		}
+
 		if (!errors.hasErrors("referenceNumber")) {
 			List<String> referenceCodes = this.repository.findReferences();
 			errors.state(request, !referenceCodes.contains(entity.getReferenceNumber()), "referenceNumber", "worker.application.form.error.reference");
+		}
+
+		if (hasXXX1) {
+			if (!entity.getPassword().isEmpty()) {
+				errors.state(request, !entity.getAnswer().isEmpty() && !entity.getXXX4().isEmpty(), "password", "worker.application.form.error.passNoXXX4");
+			}
+			if (!entity.getXXX4().isEmpty()) {
+				errors.state(request, !entity.getAnswer().isEmpty(), "XXX4", "worker.application.form.error.XXX4NoAnswer");
+			}
 		}
 	}
 
