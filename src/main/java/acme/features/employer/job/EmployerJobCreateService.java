@@ -85,7 +85,6 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 				errors.state(request, entity.getXXX1().getXXX2().isEmpty(), "XXX1.text", "employer.job.form.error.XXX1noText");
 			}
 		}
-
 	}
 
 	@Override

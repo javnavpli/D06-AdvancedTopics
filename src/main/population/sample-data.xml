@@ -292,12 +292,12 @@
 	<!-- XXX1 -->
 	
 	<bean id="XXX11" class="acme.entities.XXX1.XXX1">
-		<property name="text" value="XXX1 text 1" />
+		<property name="text" value="XXX1text1" />
 		<property name="XXX2" value="http://www.example1.com" />
 	</bean>
 	
 	<bean id="XXX12" class="acme.entities.XXX1.XXX1">
-		<property name="text" value="XXX1 text 2" />
+		<property name="text" value="XXX1text2" />
 	</bean>
 	
 	<!-- Jobs -->
@@ -403,6 +403,8 @@
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job1" />
+    	<property name="answer" value="Answer 1"/>
+    	<property name="XXX4" value="XXX4 1"/>
     </bean>
     
     <bean name="application2" class="acme.entities.applications.Application">
@@ -413,7 +415,10 @@
     	<property name="qualifications" value="example qualifications" />
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
-    	<property name="job" ref="job1" />
+    	<property name="job" ref="job2" />
+    	<property name="answer" value="Answer 2"/>
+    	<property name="XXX4" value="XXX4 2"/>
+    	<property name="password" value="q?1q?1q?1q?1"/>
     </bean>
     
     <bean name="application3" class="acme.entities.applications.Application">
@@ -424,7 +429,8 @@
     	<property name="qualifications" value="example qualifications" />
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
-    	<property name="job" ref="job3" />
+    	<property name="job" ref="job1" />
+    	<property name="answer" value="Answer 3"/>
     </bean>
     
     <bean name="application4" class="acme.entities.applications.Application">
@@ -435,7 +441,7 @@
     	<property name="qualifications" value="example qualifications" />
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
-    	<property name="job" ref="job3" />
+    	<property name="job" ref="job2" />
     </bean>
     
     <bean name="application5" class="acme.entities.applications.Application">

@@ -2,7 +2,6 @@
 package acme.entities.XXX1;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -22,7 +21,6 @@ public class XXX1 extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotBlank
 	@Length(max = 10)
 	private String				text;
 

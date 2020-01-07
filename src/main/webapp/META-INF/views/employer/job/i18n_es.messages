@@ -33,7 +33,7 @@ employer.job.form.error.noDuties = El trabajo debe tener al menos una tarea
 employer.job.form.error.reference = Ya hay un trabajo con esa referencia
 employer.job.form.error.deadline = La fecha límite debe ser futura
 employer.job.form.error.emptyDescription = La descripción no puede estar vacía
-employer.job.form.error.XXX1noText = No puede estar en blanco si escribes un XXX4
+employer.job.form.error.XXX1noText = No puede estar en blanco si escribes un XXX2
 
 employer.job.list.label.reference = Referencia
 employer.job.list.label.title = Título
