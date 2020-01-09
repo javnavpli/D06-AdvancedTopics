@@ -509,7 +509,7 @@ Spam
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1428</x>
+      <x>1351</x>
       <y>539</y>
       <w>217</w>
       <h>70</h>
@@ -760,8 +760,8 @@ RequestAuditor
     <coordinates>
       <x>749</x>
       <y>539</y>
-      <w>448</w>
-      <h>147</h>
+      <w>329</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Application
@@ -773,18 +773,15 @@ Application
 + skills: String(NotBlank)
 + qualifications: String (NotBlank)
 + justification: String
-+ answer: String 
-+ XXX4: String
-+ password: String (Pattern(^((?=(.*\\d){4,})(?=(.*[a-zA-Z]){4,})(?=(.*[¿?¡!'\"_.,;:\\-\\[\\]\\*\\/]){4,}).{8,}|)$)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1505</x>
+      <x>1449</x>
       <y>455</y>
-      <w>63</w>
+      <w>84</w>
       <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -792,12 +789,12 @@ m1=1
 m2=1
 have ^
 </panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;120.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1204</x>
+      <x>1099</x>
       <y>539</y>
       <w>217</w>
       <h>84</h>
@@ -1014,7 +1011,7 @@ cteate &gt;
     <coordinates>
       <x>1043</x>
       <y>413</y>
-      <w>462</w>
+      <w>385</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -1022,14 +1019,14 @@ m1=0..1
 m2=0..*
 create &gt;
 </panel_attributes>
-    <additional_attributes>10.0;10.0;640.0;180.0</additional_attributes>
+    <additional_attributes>10.0;10.0;530.0;180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1015</x>
       <y>427</y>
-      <w>259</w>
+      <w>154</w>
       <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -1037,36 +1034,6 @@ m1=0..1
 m2=0..*
 create &gt;
 </panel_attributes>
-    <additional_attributes>10.0;10.0;350.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>630</y>
-      <w>266</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-XXX1
---
-+ text: String(Length(max = 10))
-+ XXX2: String(Url)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>259</x>
-      <y>651</y>
-      <w>98</w>
-      <h>35</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=0..1
-m2=1
-&lt; has
-</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;160.0</additional_attributes>
   </element>
 </diagram>

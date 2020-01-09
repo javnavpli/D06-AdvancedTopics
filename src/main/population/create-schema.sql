@@ -26,9 +26,9 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
-        `xxx4` varchar(255),
         `answer` varchar(255),
         `justification` varchar(255),
+        `mark` varchar(255),
         `moment` datetime(6),
         `password` varchar(255),
         `qualifications` varchar(255),
@@ -183,8 +183,8 @@
         `salary_amount` double precision,
         `salary_currency` varchar(255),
         `title` varchar(255),
-        `xxx1_id` integer,
         `employer_id` integer not null,
+        `newor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -235,6 +235,14 @@
         `height` double precision,
         `name` varchar(255),
         `weight` double precision,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `newor` (
+       `id` integer not null,
+        `version` integer not null,
+        `mark` varchar(255),
+        `text` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -352,14 +360,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `xxx1` (
-       `id` integer not null,
-        `version` integer not null,
-        `xxx2` varchar(255),
-        `text` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -451,14 +451,14 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        references `user_account` (`id`);
 
     alter table `job` 
-       add constraint `FKqiwdylo69f56l90f91jjm07d7` 
-       foreign key (`xxx1_id`) 
-       references `xxx1` (`id`);
-
-    alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `job` 
+       add constraint `FK670413vaptf5e1jueoe24skof` 
+       foreign key (`newor_id`) 
+       references `newor` (`id`);
 
     alter table `message` 
        add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 

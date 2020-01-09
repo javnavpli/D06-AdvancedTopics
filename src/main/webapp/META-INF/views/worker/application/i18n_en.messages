@@ -15,14 +15,8 @@ worker.application.form.label.statement = Statement:
 worker.application.form.label.skills = Skills:
 worker.application.form.label.qualifications = Qualifications:
 worker.application.form.label.status = Status:
-worker.application.form.label.password = Password
-worker.application.form.label.xxx4 = xxx4
-worker.application.form.label.answer = Answer
 worker.application.form.label.justification = Justification
 worker.application.form.error.reference = There is already an application with that reference
-worker.application.form.error.passNoXXX4 = XXX4 can't be empty if you have written a password
-worker.application.form.error.XXX4NoAnswer = Answer can't be empty if you have written a XXX4
-worker.application.form.error.cantComplete = You can't complete these inputs due to there is no XXX1 in this job
 
 worker.application.form.label.jobTitle
 

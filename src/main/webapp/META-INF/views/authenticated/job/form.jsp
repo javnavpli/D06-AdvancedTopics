@@ -25,8 +25,6 @@
 	<acme:form-money code="authenticated.job.form.label.salary" path="salary"/>
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
-	<acme:form-textarea code="authenticated.job.form.label.xxx1.text" path="XXX1.text"/>
-	<acme:form-url code="authenticated.job.form.label.xxx1.xxx2" path="XXX1.XXX2"/>
 	
 	
 	<acme:form-submit test="${ applicable}"

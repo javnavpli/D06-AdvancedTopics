@@ -26,8 +26,6 @@
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
-	<acme:form-textarea code="employer.job.form.label.xxx1.text" path="XXX1.text"/>
-	<acme:form-url code="employer.job.form.label.xxx1.xxx2" path="XXX1.XXX2"/>
 	
 	<acme:form-return code="employer.job.form.button.return"/>
 	<acme:form-submit test="${command == 'create'}"

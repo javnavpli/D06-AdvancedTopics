@@ -34,7 +34,7 @@ public class AdministratorListDataEmployerWorkerService implements AbstractShowS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "jobsPerEmployer", "applicationsPerEmployer", "applicationsPerWorker", "jobsWithXXX1", "XXX1WithXXX3", "XXX4WithPassword");
+		request.unbind(entity, model, "jobsPerEmployer", "applicationsPerEmployer", "applicationsPerWorker");
 
 	}
 
@@ -47,18 +47,6 @@ public class AdministratorListDataEmployerWorkerService implements AbstractShowS
 		result.setJobsPerEmployer(this.repository.jobsEmployer());
 		result.setApplicationsPerEmployer(this.repository.applicationsEmployer());
 		result.setApplicationsPerWorker(this.repository.applicationsWorker());
-		result.setJobsWithXXX1(0.);
-		result.setXXX1WithXXX3(0.);
-		result.setXXX4WithPassword(0.);
-		if (this.repository.jobsWithXXX1() != null) {
-			result.setJobsWithXXX1(this.repository.jobsWithXXX1() * 100);
-		}
-		if (this.repository.XXX1WithXXX3() != null) {
-			result.setXXX1WithXXX3(this.repository.XXX1WithXXX3() * 100);
-		}
-		if (this.repository.applicationsWithXXX4Protected() != null) {
-			result.setXXX4WithPassword(this.repository.applicationsWithXXX4Protected() * 100);
-		}
 
 		return result;
 	}

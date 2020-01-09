@@ -63,6 +63,7 @@ master.menu.anonymous.listTopInvestors = Mejores Inversores
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.listControlCheck = Listar Datos Control Check
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.listAnnouncement = Anuncios
 master.menu.administrator.companyRecords = Registros de compañias

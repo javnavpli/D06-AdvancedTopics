@@ -22,9 +22,6 @@
 	<acme:form-textbox readonly="true" code="employer.application.form.label.statement" path="statement"/>
 	<acme:form-textarea readonly="true" code="employer.application.form.label.skills" path="skills"/>
 	<acme:form-textarea readonly="true" code="employer.application.form.label.qualifications" path="qualifications"/>
-	<acme:form-textbox readonly="true" code="employer.application.form.label.answer" path="answer"/>
-	<acme:form-textbox readonly="true" code="employer.application.form.label.xxx4" path="XXX4"/>
-	<acme:form-textbox readonly="true" code="employer.application.form.label.password" path="password"/>
 	<acme:check-access test="${upgradeable || command == 'update'}">
 		<acme:form-select code="employer.application.form.label.acceptReject" path="acceptReject">
 			<acme:form-option code="employer.application.form.label.accept" value="accept"/>

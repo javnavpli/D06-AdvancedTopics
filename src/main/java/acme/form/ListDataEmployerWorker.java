@@ -19,8 +19,5 @@ public class ListDataEmployerWorker implements Serializable {
 	Double						jobsPerEmployer;
 	Double						applicationsPerEmployer;
 	Double						applicationsPerWorker;
-	Double						jobsWithXXX1;
-	Double						XXX1WithXXX3;
-	Double						XXX4WithPassword;
 
 }

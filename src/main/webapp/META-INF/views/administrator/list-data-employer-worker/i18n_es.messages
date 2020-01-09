@@ -11,6 +11,3 @@
 administrator.list-data.form.label.jobsPerEmployer = Media de Trabajos por empleador
 administrator.list-data.form.label.applicationsPerEmployer = Media de Solicitudes por empleador
 administrator.list-data.form.label.applicationsPerWorker = Media de Solicitudes por trabajador
-administrator.list-data.form.label.jobsWithXXX1 = Proporción de Trabajos con XXX1
-administrator.list-data.form.label.XXX1WithXXX3 = Proporción de XXX1 con XXX3
-administrator.list-data.form.label.XXX4WithPassword = Proporción de Solicitudes con XXX4 Protegida

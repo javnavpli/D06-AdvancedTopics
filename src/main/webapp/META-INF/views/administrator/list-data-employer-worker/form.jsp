@@ -19,7 +19,4 @@
 	<acme:form-textbox code="administrator.list-data.form.label.jobsPerEmployer" path="jobsPerEmployer"/>
     <acme:form-textbox code="administrator.list-data.form.label.applicationsPerEmployer" path="applicationsPerEmployer"/>
     <acme:form-textbox code="administrator.list-data.form.label.applicationsPerWorker" path="applicationsPerWorker"/>
-    <acme:form-textbox code="administrator.list-data.form.label.jobsWithXXX1" path="jobsWithXXX1"/>
-    <acme:form-textbox code="administrator.list-data.form.label.XXX1WithXXX3" path="XXX1WithXXX3"/>
-    <acme:form-textbox code="administrator.list-data.form.label.XXX4WithPassword" path="XXX4WithPassword"/>
 </acme:form>

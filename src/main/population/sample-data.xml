@@ -289,17 +289,6 @@
 		<property name="currency" value="€" />
 	</bean>
 	
-	<!-- XXX1 -->
-	
-	<bean id="XXX11" class="acme.entities.XXX1.XXX1">
-		<property name="text" value="XXX1text1" />
-		<property name="XXX2" value="http://www.example1.com" />
-	</bean>
-	
-	<bean id="XXX12" class="acme.entities.XXX1.XXX1">
-		<property name="text" value="XXX1text2" />
-	</bean>
-	
 	<!-- Jobs -->
     
     <bean name="job1" class="acme.entities.jobs.Job">
@@ -318,7 +307,6 @@
 		</property>
     	<property name="finalMode" value="true" />
     	<property name="employer" ref="employer1Employer" />
-    	<property name="XXX1" ref="XXX11" />
     </bean>
     
     <bean name="job2" class="acme.entities.jobs.Job">
@@ -335,7 +323,6 @@
 		</property>
     	<property name="finalMode" value="false" />
     	<property name="employer" ref="employer1Employer" />
-    	<property name="XXX1" ref="XXX12" />
     </bean>
     
     <bean name="job3" class="acme.entities.jobs.Job">
@@ -403,8 +390,6 @@
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job1" />
-    	<property name="answer" value="Answer 1"/>
-    	<property name="XXX4" value="XXX4 1"/>
     </bean>
     
     <bean name="application2" class="acme.entities.applications.Application">
@@ -416,9 +401,6 @@
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job2" />
-    	<property name="answer" value="Answer 2"/>
-    	<property name="XXX4" value="XXX4 2"/>
-    	<property name="password" value="q?1q?1q?1q?1"/>
     </bean>
     
     <bean name="application3" class="acme.entities.applications.Application">

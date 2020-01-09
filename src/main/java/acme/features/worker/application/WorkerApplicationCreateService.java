@@ -76,7 +76,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "answer", "XXX4", "password");
+		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications");
 
 	}
 
@@ -121,25 +121,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
-		int idJob = request.getModel().getInteger("id");
-		boolean hasXXX1 = this.repository.findXXX1ByJobId(idJob) != null;
-
-		if (!hasXXX1) {
-			errors.state(request, entity.getAnswer().isEmpty() && entity.getXXX4().isEmpty() && entity.getPassword().isEmpty(), "cantComplete", "worker.application.form.error.cantComplete");
-		}
-
 		if (!errors.hasErrors("referenceNumber")) {
 			List<String> referenceCodes = this.repository.findReferences();
 			errors.state(request, !referenceCodes.contains(entity.getReferenceNumber()), "referenceNumber", "worker.application.form.error.reference");
-		}
-
-		if (hasXXX1) {
-			if (!entity.getPassword().isEmpty()) {
-				errors.state(request, !entity.getAnswer().isEmpty() && !entity.getXXX4().isEmpty(), "password", "worker.application.form.error.passNoXXX4");
-			}
-			if (!entity.getXXX4().isEmpty()) {
-				errors.state(request, !entity.getAnswer().isEmpty(), "XXX4", "worker.application.form.error.XXX4NoAnswer");
-			}
 		}
 	}
 

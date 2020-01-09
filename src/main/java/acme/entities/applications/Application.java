@@ -14,7 +14,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -59,13 +58,6 @@ public class Application extends DomainEntity {
 	private String				qualifications;
 
 	private String				justification;
-
-	private String				answer;
-
-	private String				XXX4;
-
-	@Pattern(regexp = "^((?=(.*\\d){4,})(?=(.*[a-zA-Z]){4,})(?=(.*[¿?¡!'\"_.,;:\\-\\[\\]\\*\\/]){4,}).{8,}|)$")
-	private String				password;
 
 	@NotNull
 	@Valid

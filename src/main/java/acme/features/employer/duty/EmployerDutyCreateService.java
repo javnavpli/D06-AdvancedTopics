@@ -66,9 +66,6 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("timexWeek")) {
-			errors.state(request, entity.getTimexWeek() <= 100. && entity.getTimexWeek() > 0., "timexWeek", "employer.duty.form.error.timexWeekRestriction");
-		}
 	}
 
 	@Override

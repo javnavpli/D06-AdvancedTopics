@@ -28,9 +28,6 @@
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
 	<acme:form-errors path="cantComplete"/>
-	<acme:form-textbox code="worker.application.form.label.answer" path="answer"/>
-	<acme:form-textbox code="worker.application.form.label.xxx4" path="XXX4"/>
-	<acme:form-password code="worker.application.form.label.password" path="password"/>
 	
 	<acme:form-submit test="${command == 'create'}"
 			code='worker.application.form.button.create'

@@ -44,7 +44,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		boolean upgradeable = !this.repository.findOneJobById(jobId).getFinalMode();
 		model.setAttribute("upgradeable", upgradeable);
 
-		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "finalMode", "XXX1.text", "XXX1.XXX2");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "description", "finalMode");
 
 	}
 

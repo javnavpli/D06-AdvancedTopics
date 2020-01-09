@@ -35,6 +35,10 @@
        drop 
        foreign key `FKfp0yot74q1m8ofbclq3nlfidw`;
 
+    alter table `commercial_banner` 
+       drop 
+       foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
@@ -51,6 +55,10 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `job` 
+       drop 
+       foreign key `FK670413vaptf5e1jueoe24skof`;
+
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
@@ -58,6 +66,10 @@
     alter table `message_thread` 
        drop 
        foreign key `FKadu47h7h56fegmk27oo1qd1fb`;
+
+    alter table `non_commercial_banner` 
+       drop 
+       foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
 
     alter table `provider` 
        drop 
@@ -130,6 +142,8 @@
     drop table if exists `muniz_bulletin`;
 
     drop table if exists `navarro_bulletin`;
+
+    drop table if exists `newor`;
 
     drop table if exists `non_commercial_banner`;
 

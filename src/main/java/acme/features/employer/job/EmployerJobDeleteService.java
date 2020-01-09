@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.XXX1.XXX1;
 import acme.entities.applications.Application;
 import acme.entities.duty.Duty;
 import acme.entities.jobs.Job;
@@ -50,7 +49,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode", "XXX1.text", "XXX1.XXX2");
+		request.unbind(entity, model, "title", "reference", "deadline", "description", "salary", "moreInfo", "finalMode");
 	}
 
 	@Override
@@ -75,7 +74,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		if (!errors.hasErrors()) {
 			int idThisJob = request.getModel().getInteger("id");
 			Collection<Application> ap = this.repository.findApplicationsByJobId(idThisJob);
-			errors.state(request, ap == null, "reference", "employer.job.form.error.delete");
+			errors.state(request, ap.isEmpty(), "reference", "employer.job.form.error.delete");
 		}
 
 	}
@@ -85,17 +84,13 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		int idThisJob = request.getModel().getInteger("id");
-		Collection<Duty> thisJobDuties = this.repository.findManyDutiesByJobId(idThisJob);
+		Collection<Duty> thisJobDuties = this.repository.findManyDutiesByJobId(entity.getId());
 		if (!thisJobDuties.isEmpty()) {
 			for (Duty d : thisJobDuties) {
 				this.repository.delete(d);
 			}
 		}
-		if (this.repository.findOneJobById(idThisJob).getXXX1() != null) {
-			XXX1 x1 = this.repository.findOneJobById(idThisJob).getXXX1();
-			this.repository.delete(x1);
-		}
+
 		this.repository.delete(entity);
 	}
 

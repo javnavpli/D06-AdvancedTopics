@@ -9,7 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -20,7 +19,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.XXX1.XXX1;
 import acme.entities.duty.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
@@ -67,10 +65,6 @@ public class Job extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Employer				employer;
-
-	@Valid
-	@OneToOne(optional = true)
-	private XXX1					XXX1;
 
 
 	//Derived attributes ------------------------------------------
