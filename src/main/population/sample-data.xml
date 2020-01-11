@@ -993,22 +993,10 @@
 		<property name="IdCode" value="44242997P" />
 	</bean>
 	
-	<!-- Phones -->
-	
-	<bean name="phone1" class="acme.datatypes.Phone">
-		<property name="countryCode" value="1"/>
-		<property name="number" value="123456"/>
-	</bean>
-	
 	<bean name="phone2" class="acme.datatypes.Phone">
 		<property name="countryCode" value="44"/>
 		<property name="areaCode" value="0"/>
 		<property name="number" value="123-456"/>
-	</bean>
-	
-	<bean name="phone3" class="acme.datatypes.Phone">
-		<property name="countryCode" value="34"/>
-		<property name="number" value="123 456 789"/>
 	</bean>
 	
 	<bean name="authenticated1UserAccount" class="acme.framework.entities.UserAccount">
@@ -1020,7 +1008,7 @@
                 <property name="name" value="Juan" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juan.camacho@acme.com" />
-                <property name="phone" ref="phone1" />
+                <property name="phone" value="+1 123456" />
             </bean>
         </property>
         <property name="roles">
@@ -1045,7 +1033,7 @@
                 <property name="name" value="Juana" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juana.camacho@acme.com" />
-                <property name="phone" ref="phone2" />
+                <property name="phone" value="+44 (0) 123-456"/>
             </bean>
         </property>
         <property name="roles">
@@ -1070,7 +1058,7 @@
                 <property name="name" value="Luis" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="luis.camacho@acme.com" />
-                <property name="phone" ref="phone3" />
+                <property name="phone" value="+34 123 456 789"/>
             </bean>
         </property>
         <property name="roles">
