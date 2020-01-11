@@ -23,7 +23,7 @@ public class PhoneFormatter implements Formatter<Phone> {
 		String countryCodeText, areaCodeText, numberText;
 
 		countryCodeText = String.format("+%d", object.getCountryCode());
-		areaCodeText = object.getAreaCode() == null ? " " : String.format(" (%d) ", object.getAreaCode());
+		areaCodeText = object.getAreaCode() == null ? " " : String.format(" (%s) ", object.getAreaCode());
 		numberText = String.format("%s", object.getNumber());
 
 		result = String.format("+%d%s%ld", countryCodeText, areaCodeText, numberText);
@@ -69,7 +69,7 @@ public class PhoneFormatter implements Formatter<Phone> {
 			result.setAreaCode(areaCode);
 			result.setNumber(number);
 		}
-		return null;
+		return result;
 	}
 
 }
