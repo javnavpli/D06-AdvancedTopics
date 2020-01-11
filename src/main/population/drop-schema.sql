@@ -55,10 +55,6 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
-    alter table `job` 
-       drop 
-       foreign key `FK670413vaptf5e1jueoe24skof`;
-
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
@@ -142,8 +138,6 @@
     drop table if exists `muniz_bulletin`;
 
     drop table if exists `navarro_bulletin`;
-
-    drop table if exists `newor`;
 
     drop table if exists `non_commercial_banner`;
 
