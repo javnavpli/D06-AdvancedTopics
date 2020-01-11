@@ -29,8 +29,8 @@
 </jstl:if>
 
 <div class="form-group">
-	<label for="${path }">
-		<acme:message code="${code }"/>
+	<label for="${path}">
+		<acme:message code="${code}"/>
 	</label>
 	<input
 		id="${path}" name="${path}"

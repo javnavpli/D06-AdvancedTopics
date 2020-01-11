@@ -412,7 +412,6 @@
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job1" />
-    	<property name="answer" value="Answer 3"/>
     </bean>
     
     <bean name="application4" class="acme.entities.applications.Application">
@@ -994,6 +993,12 @@
 		<property name="IdCode" value="44242997P" />
 	</bean>
 	
+	<bean name="phone2" class="acme.datatypes.Phone">
+		<property name="countryCode" value="44"/>
+		<property name="areaCode" value="0"/>
+		<property name="number" value="123-456"/>
+	</bean>
+	
 	<bean name="authenticated1UserAccount" class="acme.framework.entities.UserAccount">
         <property name="username" value="authenticated1" />
         <property name="password" value="authenticated1" />
@@ -1003,6 +1008,7 @@
                 <property name="name" value="Juan" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juan.camacho@acme.com" />
+                <property name="phone" value="+1 123456" />
             </bean>
         </property>
         <property name="roles">
@@ -1027,6 +1033,7 @@
                 <property name="name" value="Juana" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juana.camacho@acme.com" />
+                <property name="phone" value="+44 (0) 123-456"/>
             </bean>
         </property>
         <property name="roles">
@@ -1051,6 +1058,7 @@
                 <property name="name" value="Luis" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="luis.camacho@acme.com" />
+                <property name="phone" value="+34 123 456 789"/>
             </bean>
         </property>
         <property name="roles">
