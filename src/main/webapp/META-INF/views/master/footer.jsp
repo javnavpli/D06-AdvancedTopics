@@ -37,3 +37,8 @@
 	</acme:footer-logo>		
 	
 </acme:footer-panel>
+
+<div align="center">
+	<img src="${banner.picture}" alt="Random Banner" class="img-fluid rounded" align="middle" style="margin:50px 0px"/>
+</div>
+
