@@ -12,53 +12,7 @@
 	
 	<!-- Some Users -->
 	
-	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">
-        <property name="username" value="consumer" />
-        <property name="password" value="consumer" />
-        <property name="enabled" value="true" />
-        <property name="identity">
-            <bean class="acme.datatypes.UserIdentity">
-                <property name="name" value="Jose" />
-                <property name="surname" value="Camacho" />
-                <property name="email" value="jose.camacho@acme.com" />
-            </bean>
-        </property>
-        <property name="roles">
-            <list>
-          	  	<ref bean="consumer1" />
-                <ref bean="authenticatedConsumer" />
-            </list>
-        </property>
-    </bean>
-
-    <bean name="authenticatedConsumer" class="acme.framework.entities.Authenticated">
-        <property name="userAccount" ref="consumerUserAccount" />
-    </bean>
-    
-    
-    
-    <bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
-        <property name="username" value="provider" />
-        <property name="password" value="provider" />
-        <property name="enabled" value="true" />
-        <property name="identity">
-            <bean class="acme.datatypes.UserIdentity">
-                <property name="name" value="Luisa" />
-                <property name="surname" value="Camacho" />
-                <property name="email" value="luisa.camacho@acme.com" />
-            </bean>
-        </property>
-        <property name="roles">
-            <list>
-                <ref bean="provider1" />
-                <ref bean="authenticatedProvider" />
-            </list>
-        </property>
-    </bean>
-
-    <bean name="authenticatedProvider" class="acme.framework.entities.Authenticated">
-        <property name="userAccount" ref="providerUserAccount" />
-    </bean>
+	
     
     
     <bean name="auditorUserAccount" class="acme.framework.entities.UserAccount">
