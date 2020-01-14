@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.duty.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
-import acme.features.employer.job.EmployerJobRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -19,14 +18,16 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	EmployerJobRepository repository;
+	private EmployerDutyRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		return true;
+		Job j = this.repository.findOneJobById(request.getModel().getInteger("id"));
+
+		return j.getEmployer().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override

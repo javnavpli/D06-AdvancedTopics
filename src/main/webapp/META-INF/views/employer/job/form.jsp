@@ -17,7 +17,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
+	<acme:form-textbox code="employer.job.form.label.reference" path="reference" placeholder="EEEE-JJJJ"/>
 	<acme:check-access test="${command != 'create' && upgradeable}">
 		<acme:form-checkbox code="employer.job.form.label.status" path="finalMode"/>
 	</acme:check-access>

@@ -17,7 +17,7 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	EmployerDutyRepository repository;
+	private EmployerDutyRepository repository;
 
 
 	//AbstractUpdateService<Administrator, Announcement> interface -------------------------
@@ -29,7 +29,7 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 		int idJob = this.repository.findOneJobByDutyId(request.getModel().getInteger("id"));
 		Job j = this.repository.findOneJobById(idJob);
 
-		return !j.getFinalMode();
+		return !j.getFinalMode() && j.getEmployer().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override

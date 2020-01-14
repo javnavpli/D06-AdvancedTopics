@@ -18,7 +18,7 @@
 <acme:form>
 	<acme:form-textbox code="employer.duty.form.label.title" path="title"/>
 	<acme:form-textarea code="employer.duty.form.label.description" path="description"/>
-	<acme:form-integer code="employer.duty.form.label.timexWeek" path="timexWeek"/>
+	<acme:form-integer code="employer.duty.form.label.timexWeek" path="timexWeek" placeholder="0-100"/>
 	
 	<acme:form-return code="employer.duty.form.button.return"/>
 	<acme:form-submit test="${command == 'create'}"
