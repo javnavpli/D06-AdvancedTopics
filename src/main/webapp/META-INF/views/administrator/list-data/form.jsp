@@ -19,12 +19,4 @@
 	<acme:form-textbox code="administrator.list-data.form.label.nAnn" path="numberAnnouncements"/>
     <acme:form-textbox code="administrator.list-data.form.label.nCom" path="numberCompanies"/>
     <acme:form-textbox code="administrator.list-data.form.label.nInv" path="numberInvestors"/>
-    <acme:form-textbox code="administrator.list-data.form.label.minOff" path="minRewardOffer"/>
-    <acme:form-textbox code="administrator.list-data.form.label.maxOff" path="maxRewardOffer"/>
-    <acme:form-textbox code="administrator.list-data.form.label.avgOff" path="averageRewardOffer"/>
-    <acme:form-textbox code="administrator.list-data.form.label.derOff" path="derivationRewardOffer"/>
-    <acme:form-textbox code="administrator.list-data.form.label.minReq" path="minRewardRequest"/>
-    <acme:form-textbox code="administrator.list-data.form.label.maxReq" path="maxRewardRequest"/>
-    <acme:form-textbox code="administrator.list-data.form.label.avgReq" path="averageRewardRequest"/>
-    <acme:form-textbox code="administrator.list-data.form.label.derReq" path="derivationRewardRequest"/>
 </acme:form>

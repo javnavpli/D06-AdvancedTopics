@@ -35,6 +35,9 @@ public interface AuthenticatedUserThreadRepository extends AbstractRepository {
 	@Query("select mt.starter.id from MessageThread mt where mt.id = (select ut.messageThread.id from UserThread ut where ut.id = ?1)")
 	Integer findStarterMessageThread(int id);
 
+	@Query("select mt.starter.id from MessageThread mt where mt.id = ?1")
+	Integer findStarterByMessageThreadId(int id);
+
 	@Query("select ut.user.id from UserThread ut where ut.id = ?1")
 	Integer findAuthenticatedByUTId(int i);
 

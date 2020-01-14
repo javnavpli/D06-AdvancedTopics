@@ -41,8 +41,10 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		Principal p = request.getPrincipal();
 		int starterId = this.repository.findStarterId(request.getModel().getInteger("id"));
-		boolean removable = starterId == this.repository.findAuthenticatedByPrincipal(p.getAccountId()).getId();
+		boolean removable = starterId == p.getActiveRoleId();
 		model.setAttribute("removable", removable);
+		boolean canAdd = starterId == request.getPrincipal().getActiveRoleId();
+		model.setAttribute("canAdd", canAdd);
 
 		request.unbind(entity, model, "moment", "starterUsername", "title");
 	}

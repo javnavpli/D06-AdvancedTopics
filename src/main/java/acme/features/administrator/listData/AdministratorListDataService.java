@@ -34,8 +34,7 @@ public class AdministratorListDataService implements AbstractShowService<Adminis
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "numberAnnouncements", "numberCompanies", "numberInvestors", "minRewardRequest", "maxRewardRequest", "averageRewardRequest", "derivationRewardRequest", "minRewardOffer", "maxRewardOffer", "averageRewardOffer",
-			"derivationRewardOffer");
+		request.unbind(entity, model, "numberAnnouncements", "numberCompanies", "numberInvestors");
 
 	}
 
@@ -48,16 +47,6 @@ public class AdministratorListDataService implements AbstractShowService<Adminis
 		result.setNumberAnnouncements(this.repository.numbAnn());
 		result.setNumberCompanies(this.repository.numbComp());
 		result.setNumberInvestors(this.repository.numbInv());
-
-		result.setMinRewardRequest(this.repository.minRequestReward());
-		result.setMaxRewardRequest(this.repository.maxRequestReward());
-		result.setAverageRewardRequest(this.repository.avgRequestReward());
-		result.setDerivationRewardRequest(this.repository.stddevRequestReward());
-
-		result.setMinRewardOffer(this.repository.minRequestOffer());
-		result.setMaxRewardOffer(this.repository.maxRequestOffer());
-		result.setAverageRewardOffer(this.repository.avgRequestOffer());
-		result.setDerivationRewardOffer(this.repository.stddevRequestOffer());
 
 		return result;
 	}

@@ -42,6 +42,11 @@
 			action="/authenticated/message-thread/delete"/>
 	</acme:check-access>
 		
+	<jstl:if test="${canAdd }">
+	<acme:form-submit
+				code='authenticated.userThread.form.button.create'
+				action='/authenticated/user-thread/create?${pageContext.request.queryString}' method="get"/>
+	</jstl:if>
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 	
 </acme:form>
