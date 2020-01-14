@@ -27,12 +27,8 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 		assert request != null;
 
 		int sponsorId = request.getPrincipal().getActiveRoleId();
-		Sponsor sponsor = this.repository.findOneSponsorById(sponsorId);
 
-		boolean res = sponsor.getCreditCard() != null;
-		res = res && this.repository.findSponsorByCommercialBannerId(request.getModel().getInteger("id")) == sponsorId;
-
-		return res;
+		return this.repository.findSponsorByCommercialBannerId(request.getModel().getInteger("id")) == sponsorId;
 	}
 
 	@Override

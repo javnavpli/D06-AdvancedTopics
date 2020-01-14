@@ -19,7 +19,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>364</x>
-      <y>203</y>
+      <y>182</y>
       <w>154</w>
       <h>91</h>
     </coordinates>
@@ -40,7 +40,7 @@ bg=orange
     <id>UMLNote</id>
     <coordinates>
       <x>364</x>
-      <y>140</y>
+      <y>133</y>
       <w>168</w>
       <h>42</h>
     </coordinates>
@@ -53,13 +53,13 @@ bg=blue</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>434</x>
-      <y>175</y>
+      <y>168</y>
       <w>21</w>
-      <h>42</h>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=..
 </panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;20.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -132,14 +132,17 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>364</x>
-      <y>301</y>
+      <y>280</y>
       <w>154</w>
-      <h>49</h>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
-
++ CHART
++ LIST_TOP
++ LIST_MINE
++ LIST_NOT_MINE
 
 bg=orange</panel_attributes>
     <additional_attributes/>
@@ -419,17 +422,14 @@ Spam
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1351</x>
-      <y>539</y>
-      <w>217</w>
-      <h>70</h>
+      <x>1295</x>
+      <y>630</y>
+      <w>161</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 CommercialBanner
 --
-+ picture: String(NotBlank, URL)
-+ slogan: String(NotBlank)
-+ url: String(NotBlank, URL)
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -445,7 +445,9 @@ CommercialBanner
 Employer
 --
 + company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
++ sector: String {NotBlank}
+
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -471,7 +473,9 @@ Employer
 Worker
 --
 + qualificationRecord: String {NotBlank}
-+ skills: String {NotBlank}</panel_attributes>
++ skills: String {NotBlank}
+
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -548,7 +552,9 @@ CreditCard
 Auditor
 --
 + firm: String {NotBlank}
-+ statement: String {NotBlank}</panel_attributes>
++ statement: String {NotBlank}
+
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -619,13 +625,14 @@ Message
       <x>903</x>
       <y>371</y>
       <w>147</w>
-      <h>63</h>
+      <h>49</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Sponsor
 --
 + organisation: String {NotBlank}
-+ creditCard: CreditCard</panel_attributes>
+
+bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -643,7 +650,7 @@ Sponsor
     <id>UMLClass</id>
     <coordinates>
       <x>1162</x>
-      <y>294</y>
+      <y>287</y>
       <w>147</w>
       <h>63</h>
     </coordinates>
@@ -660,10 +667,10 @@ RequestAuditor
       <x>1022</x>
       <y>315</y>
       <w>154</w>
-      <h>28</h>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -689,32 +696,29 @@ Application
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1449</x>
+      <x>1428</x>
       <y>455</y>
-      <w>84</w>
-      <h>98</h>
+      <w>56</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=1
 have ^
 </panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1099</x>
-      <y>539</y>
-      <w>217</w>
-      <h>84</h>
+      <y>630</y>
+      <w>147</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 NonCommercialBanner
 --
-+ picture: String(NotBlank, URL)
-+ slogan: String(NotBlank)
-+ url: String(NotBlank, URL)
 + jingle: String(NotBlank)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -727,8 +731,8 @@ NonCommercialBanner
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
-m1=1
-m2=0..1
+m1=0..1
+m2=1
 have &gt;
 </panel_attributes>
     <additional_attributes>520.0;20.0;10.0;20.0</additional_attributes>
@@ -812,17 +816,17 @@ publish v
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>455</x>
+      <x>497</x>
       <y>329</y>
-      <w>119</w>
-      <h>84</h>
+      <w>84</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=0..*
 m2=1
 &lt; have
 </panel_attributes>
-    <additional_attributes>150.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>90.0;10.0;50.0;10.0;50.0;170.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -912,39 +916,9 @@ cteate &gt;
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
-cteate &gt;
+contains &gt;
 </panel_attributes>
     <additional_attributes>10.0;10.0;140.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1043</x>
-      <y>413</y>
-      <w>385</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=0..1
-m2=0..*
-create &gt;
-</panel_attributes>
-    <additional_attributes>10.0;10.0;530.0;180.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1015</x>
-      <y>427</y>
-      <w>154</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=0..1
-m2=0..*
-create &gt;
-</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -963,5 +937,69 @@ Phone
 
 bg=yellow</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1155</x>
+      <y>462</y>
+      <w>217</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Banner
+--
++ picture: String(NotBlank, URL)
++ slogan: String(NotBlank)
++ url: String(NotBlank, URL)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>413</y>
+      <w>203</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+create &gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;270.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1246</x>
+      <y>539</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1162</x>
+      <y>588</y>
+      <w>105</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1246</x>
+      <y>588</y>
+      <w>140</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0;180.0;60.0</additional_attributes>
   </element>
 </diagram>

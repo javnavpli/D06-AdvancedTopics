@@ -2,10 +2,14 @@
 package acme.entities.banner;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.roles.Sponsor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +34,10 @@ public class Banner extends DomainEntity {
 
 	@NotBlank
 	private String				slogan;
+
+	@Valid
+	@NotNull
+	@ManyToOne(optional = false)
+	private Sponsor				sponsor;
 
 }

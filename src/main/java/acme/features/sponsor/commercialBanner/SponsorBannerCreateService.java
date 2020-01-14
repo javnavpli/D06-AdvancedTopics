@@ -68,15 +68,17 @@ public class SponsorBannerCreateService implements AbstractCreateService<Sponsor
 		Sponsor sponsor = this.repository.findOneSponsorById(sponsorId);
 
 		result = new CommercialBanner();
+
+		CreditCard creditCard = new CreditCard();
 		if (sponsor.getCreditCard() != null) {
-			CreditCard creditCard = new CreditCard();
 			creditCard.setBrand(sponsor.getCreditCard().getBrand());
 			creditCard.setHolder(sponsor.getCreditCard().getHolder());
 			creditCard.setDeadline(sponsor.getCreditCard().getDeadline());
 			creditCard.setNumber(sponsor.getCreditCard().getNumber());
 			creditCard.setCvv(sponsor.getCreditCard().getCvv());
-			result.setCreditCard(creditCard);
 		}
+
+		result.setCreditCard(creditCard);
 		result.setSponsor(sponsor);
 
 		return result;
