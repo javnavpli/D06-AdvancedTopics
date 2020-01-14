@@ -38,27 +38,6 @@
         <property name="userAccount" ref="auditorUserAccount" />
     </bean>
 
-	<!-- Consumers -->
-	
-	<bean id="consumer1" class="acme.entities.roles.Consumer">
-		<property name="company" value="Company One" />
-		<property name="sector" value="Alimentacion" />
-		<property name="userAccount">
-			<ref bean="consumerUserAccount" />
-		</property>
-	</bean>
-	
-	<!-- Providers -->
-	
-	<bean id="provider1" class="acme.entities.roles.Provider">
-		<property name="company" value="Company Two" />
-		<property name="sector" value="Alimentacion" />
-		<property name="userAccount">
-			<ref bean="providerUserAccount" />
-		</property>
-	</bean>
-	
-
 	<!-- Auditors -->
 
 	
@@ -495,52 +474,6 @@
 		<property name="number" value="5137984536590259" />
 		<property name="cvv" value="254" />
 	</bean>
-
-	<!-- Non Commercial Banners -->
-
-	<bean id="ncbanner1" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="https://i.imgur.com/fihihcF.png" />
-		<property name="slogan" value="Slogaaan!" />
-		<property name="url" value="http://url.com" />
-		<property name="jingle" value="Jingle Pringle" />
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
-
-	<bean id="ncbanner2" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="https://i.imgur.com/MtBRoNP.png" />
-		<property name="slogan" value="Slogan!" />
-		<property name="url" value="http://urlurl.com" />
-		<property name="jingle" value="Jijijingle" />
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
-
-
-	<!-- Commercial Banners -->
-
-	<bean id="cbanner1" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="https://i.imgur.com/8YcXhS0.png" />
-		<property name="slogan" value="Slogaaan!" />
-		<property name="url" value="http://url.com" />
-		<property name="creditCard" ref="creditCard1"/>
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
-
-	<bean id="cbanner2" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="https://i.imgur.com/NGLSjk6.png" />
-		<property name="slogan" value="Slogan!" />
-		<property name="url" value="http://urlurl.com" />
-		<property name="creditCard" ref="creditCard2"/>
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
-
-	<bean id="cbanner3" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="https://i.imgur.com/2eVF1HG.png" />
-		<property name="slogan" value="Slogaaan again!" />
-		<property name="url" value="http://urls.com" />
-		<property name="creditCard" ref="creditCard3"/>
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
-	
 	
 	<!-- Sponsors -->
 
