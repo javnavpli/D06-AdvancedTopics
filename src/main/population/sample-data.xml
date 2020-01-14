@@ -12,53 +12,7 @@
 	
 	<!-- Some Users -->
 	
-	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">
-        <property name="username" value="consumer" />
-        <property name="password" value="consumer" />
-        <property name="enabled" value="true" />
-        <property name="identity">
-            <bean class="acme.datatypes.UserIdentity">
-                <property name="name" value="Jose" />
-                <property name="surname" value="Camacho" />
-                <property name="email" value="jose.camacho@acme.com" />
-            </bean>
-        </property>
-        <property name="roles">
-            <list>
-          	  	<ref bean="consumer1" />
-                <ref bean="authenticatedConsumer" />
-            </list>
-        </property>
-    </bean>
-
-    <bean name="authenticatedConsumer" class="acme.framework.entities.Authenticated">
-        <property name="userAccount" ref="consumerUserAccount" />
-    </bean>
-    
-    
-    
-    <bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
-        <property name="username" value="provider" />
-        <property name="password" value="provider" />
-        <property name="enabled" value="true" />
-        <property name="identity">
-            <bean class="acme.datatypes.UserIdentity">
-                <property name="name" value="Luisa" />
-                <property name="surname" value="Camacho" />
-                <property name="email" value="luisa.camacho@acme.com" />
-            </bean>
-        </property>
-        <property name="roles">
-            <list>
-                <ref bean="provider1" />
-                <ref bean="authenticatedProvider" />
-            </list>
-        </property>
-    </bean>
-
-    <bean name="authenticatedProvider" class="acme.framework.entities.Authenticated">
-        <property name="userAccount" ref="providerUserAccount" />
-    </bean>
+	
     
     
     <bean name="auditorUserAccount" class="acme.framework.entities.UserAccount">
@@ -412,7 +366,6 @@
     	<property name="status" value="PENDING" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job1" />
-    	<property name="answer" value="Answer 3"/>
     </bean>
     
     <bean name="application4" class="acme.entities.applications.Application">
@@ -546,7 +499,7 @@
 	<!-- Non Commercial Banners -->
 
 	<bean id="ncbanner1" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://picture.com" />
+		<property name="picture" value="https://i.imgur.com/fihihcF.png" />
 		<property name="slogan" value="Slogaaan!" />
 		<property name="url" value="http://url.com" />
 		<property name="jingle" value="Jingle Pringle" />
@@ -554,25 +507,18 @@
 	</bean>
 
 	<bean id="ncbanner2" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://picturepicture.com" />
+		<property name="picture" value="https://i.imgur.com/MtBRoNP.png" />
 		<property name="slogan" value="Slogan!" />
 		<property name="url" value="http://urlurl.com" />
 		<property name="jingle" value="Jijijingle" />
 		<property name="sponsor" ref="sponsor1Sponsor" />
 	</bean>
 
-	<bean id="ncbanner3" class="acme.entities.banner.NonCommercialBanner">
-		<property name="picture" value="http://pictures.com" />
-		<property name="slogan" value="Slogaaan again!" />
-		<property name="url" value="http://urls.com" />
-		<property name="jingle" value="Pripripringle" />
-		<property name="sponsor" ref="sponsor1Sponsor" />
-	</bean>
 
 	<!-- Commercial Banners -->
 
 	<bean id="cbanner1" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picture.com" />
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png" />
 		<property name="slogan" value="Slogaaan!" />
 		<property name="url" value="http://url.com" />
 		<property name="creditCard" ref="creditCard1"/>
@@ -580,7 +526,7 @@
 	</bean>
 
 	<bean id="cbanner2" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://picturepicture.com" />
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png" />
 		<property name="slogan" value="Slogan!" />
 		<property name="url" value="http://urlurl.com" />
 		<property name="creditCard" ref="creditCard2"/>
@@ -588,7 +534,7 @@
 	</bean>
 
 	<bean id="cbanner3" class="acme.entities.banner.CommercialBanner">
-		<property name="picture" value="http://pictures.com" />
+		<property name="picture" value="https://i.imgur.com/2eVF1HG.png" />
 		<property name="slogan" value="Slogaaan again!" />
 		<property name="url" value="http://urls.com" />
 		<property name="creditCard" ref="creditCard3"/>
@@ -624,7 +570,6 @@
             <list>
                 <ref bean="ncbanner1" />
                 <ref bean="ncbanner2" />
-                <ref bean="ncbanner3" />
             </list>
         </property>
         <property name="commercialBanners">
@@ -994,6 +939,12 @@
 		<property name="IdCode" value="44242997P" />
 	</bean>
 	
+	<bean name="phone2" class="acme.datatypes.Phone">
+		<property name="countryCode" value="44"/>
+		<property name="areaCode" value="0"/>
+		<property name="number" value="123-456"/>
+	</bean>
+	
 	<bean name="authenticated1UserAccount" class="acme.framework.entities.UserAccount">
         <property name="username" value="authenticated1" />
         <property name="password" value="authenticated1" />
@@ -1003,6 +954,7 @@
                 <property name="name" value="Juan" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juan.camacho@acme.com" />
+                <property name="phone" value="+1 123456" />
             </bean>
         </property>
         <property name="roles">
@@ -1027,6 +979,7 @@
                 <property name="name" value="Juana" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="juana.camacho@acme.com" />
+                <property name="phone" value="+44 (0) 123-456"/>
             </bean>
         </property>
         <property name="roles">
@@ -1051,6 +1004,7 @@
                 <property name="name" value="Luis" />
                 <property name="surname" value="Camacho" />
                 <property name="email" value="luis.camacho@acme.com" />
+                <property name="phone" value="+34 123 456 789"/>
             </bean>
         </property>
         <property name="roles">

@@ -32,7 +32,7 @@ bg=yellow</panel_attributes>
       <x>364</x>
       <y>203</y>
       <w>154</w>
-      <h>84</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
 UserIdentity
@@ -40,6 +40,7 @@ UserIdentity
 + name: String {NotBlank}
 + surname: String {♫NotBlank}
 + email: String {NotBlank, Email}
++ phone: Phone {Valid}
 + / fullName: String {NotBlank}
 
 bg=orange
@@ -1035,5 +1036,23 @@ m2=0..*
 create &gt;
 </panel_attributes>
     <additional_attributes>10.0;10.0;200.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>133</x>
+      <y>49</y>
+      <w>280</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+Phone
+--
++ countryCode: Integer {NotNull, Range(1, 999)}
++ areaCode: String {Pattern(\\d{1,6})}
++ number: String {NotBlank, Pattern(\\d{1,9}([\\s-]\\d{1,9}){0,4}}
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
