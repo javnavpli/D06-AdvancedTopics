@@ -620,40 +620,7 @@
 		<property value="http://www.example.com" name="moreInfo" />
 		<property value="This is a very old announcement" name="text" />
 	</bean>
-
-	<!-- Rewards -->
-
-	<bean class="acme.framework.datatypes.Money" id="requestReward1">
-		<property value="200" name="amount" />
-		<property value="EUR" name="currency" />
-	</bean>
-
-
-	<bean class="acme.framework.datatypes.Money" id="requestReward2">
-		<property value="400" name="amount" />
-		<property value="EUR" name="currency" />
-	</bean>
 	
-	<!-- Request Entity -->
-
-	<bean class="acme.entities.requestEntity.RequestEntity" id="requestEntity1">
-		<property value="request" name="title" />
-		<property value="2018/11/04 19:10" name="moment" />
-		<property value="2020/11/04 20:05" name="deadline" />
-		<property value="This is a request" name="text" />
-		<property name="reward" ref="requestReward1" />
-		<property value="RXXXX-00001" name="ticker" />
-	</bean>
-
-	<bean class="acme.entities.requestEntity.RequestEntity" id="requestEntity2">
-		<property value="request" name="title" />
-		<property value="2018/11/04 19:10" name="moment" />
-		<property value="2018/11/04 20:05" name="deadline" />
-		<property value="This is a request" name="text" />
-		<property name="reward" ref="requestReward2" />
-		<property value="RXXXX-00002" name="ticker" />
-	</bean>
-
 	<!-- Company Records -->
 
 	<bean id="companyRecords1" class="acme.entities.companyRecords.CompanyRecords">
@@ -772,38 +739,6 @@
 		<property name="name" value="Antonio" />
 		<property name="sector" value="Ropa" />
 		<property name="investingStatement" value="iv test 1" />
-	</bean>
-
-	<!-- Offers -->
-
-	<bean id="Offer1" class="acme.entities.offers.Offer">
-		<property name="title" value="Sample offer 1" />
-		<property name="moment" value="2019/06/10 10:36" />
-		<property name="deadline" value="2020/06/10 10:36" />
-		<property name="maxMoney" ref="reward3" />
-		<property name="minMoney" ref="reward1" />
-		<property name="info" value="This is the info for the sample offer 1" />
-		<property name="ticker" value="ODTRF-94857" />
-	</bean>
-
-	<bean id="Offer2" class="acme.entities.offers.Offer">
-		<property name="title" value="Sample offer 2" />
-		<property name="moment" value="2018/06/10 10:36" />
-		<property name="deadline" value="2018/12/12 11:36" />
-		<property name="maxMoney" ref="reward3" />
-		<property name="minMoney" ref="reward2" />
-		<property name="info" value="This is the info for the sample offer 2" />
-		<property name="ticker" value="ODTFG-94498" />
-	</bean>
-
-	<bean id="Offer3" class="acme.entities.offers.Offer">
-		<property name="title" value="Sample offer 3" />
-		<property name="moment" value="2019/06/10 10:36" />
-		<property name="deadline" value="2020/04/04 10:36" />
-		<property name="maxMoney" ref="reward2" />
-		<property name="minMoney" ref="reward1" />
-		<property name="info" value="This is the info for the sample offer 3" />
-		<property name="ticker" value="OBCFG-32748" />
 	</bean>
 
 	<!-- Bulletins -->

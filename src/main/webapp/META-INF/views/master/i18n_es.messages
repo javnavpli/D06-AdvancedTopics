@@ -35,8 +35,6 @@ master.menu.authenticated.listAnnouncement = Anuncios
 master.menu.authenticated.listChallenge = Retos
 master.menu.authenticated.listCompaniesRecord = Registros de Compañias
 master.menu.authenticated.listInvestorRecord = Registros de Inversores
-master.menu.authenticated.listOffers = Ofertas
-master.menu.authenticated.listRequests = Peticiones
 
 master.menu.authenticated.listMessageThreads = Cadenas de mensajes
 master.menu.authenticated.listJobs = Trabajos
@@ -101,17 +99,6 @@ master.menu.sponsor = Sponsor
 master.menu.sponsor.banner.list = Listar Banners Comerciales
 master.menu.sponsor.nonCommercialBanner.list = Listar Banners No Comerciales
 
-
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.request.create = Crear Petición
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.offer.create = Crear Oferta
-
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
@@ -122,10 +109,6 @@ master.menu.auditor.job.list-not-mine = Otros Trabajos
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.auditor = Datos de auditor
 master.menu.user-account.become-auditor = Hazte auditor
 master.menu.user-account.employer = Datos de empleador

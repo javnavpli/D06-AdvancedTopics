@@ -11,11 +11,3 @@
 administrator.list-data.form.label.nAnn = Number of Announcements
 administrator.list-data.form.label.nCom = Number of Companies
 administrator.list-data.form.label.nInv = Number of Investors
-administrator.list-data.form.label.minOff = Minimun reward for offer
-administrator.list-data.form.label.maxOff = Maximun reward for offer
-administrator.list-data.form.label.avgOff = Average reward for offer
-administrator.list-data.form.label.derOff = Standard Deviation reward for offer
-administrator.list-data.form.label.minReq = Minimun reward for request
-administrator.list-data.form.label.maxReq = Maximun reward for request
-administrator.list-data.form.label.avgReq = Average reward for request
-administrator.list-data.form.label.derReq = Standard Deviation reward for request
