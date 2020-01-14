@@ -8,6 +8,23 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.charts.form.applications = Gráfico de solicitudes por día
+administrator.charts.form.applications.pending = Pendientes
+administrator.charts.form.applications.accepted = Aceptadas
+administrator.charts.form.applications.rejected = Rechazadas
+
+
+administrator.charts.form.title = Grafico de Registro de Compania y Inversores
+
+
+administrator.charts.form.title = Gráfico de Trabajos y Solicitudes
+
+
+administrator.list-data.form.label.nAnn = Numero de Anuncios
+administrator.list-data.form.label.nCom = Numero de Compañías
+administrator.list-data.form.label.nInv = Numero de Inversores
+
+
 administrator.list-data.form.label.jobsPerEmployer = Media de Trabajos por empleador
 administrator.list-data.form.label.applicationsPerEmployer = Media de Solicitudes por empleador
 administrator.list-data.form.label.applicationsPerWorker = Media de Solicitudes por trabajador

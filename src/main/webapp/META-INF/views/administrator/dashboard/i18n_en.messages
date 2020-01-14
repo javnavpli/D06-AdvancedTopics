@@ -8,6 +8,23 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.charts.form.applications = Applications Per Day Chart
+administrator.charts.form.applications.pending = Pending
+administrator.charts.form.applications.accepted = Accepted
+administrator.charts.form.applications.rejected = Rejected
+
+
+administrator.charts.form.title = Company and Investor Records Chart
+
+
+administrator.charts.form.title = Jobs and Application Chart
+
+
+administrator.list-data.form.label.nAnn = Number of Announcements
+administrator.list-data.form.label.nCom = Number of Companies
+administrator.list-data.form.label.nInv = Number of Investors
+
+
 administrator.list-data.form.label.jobsPerEmployer = Average Jobs Per Employer
 administrator.list-data.form.label.applicationsPerEmployer = Average Applications Per Employer
 administrator.list-data.form.label.applicationsPerWorker = Average Applications Per Worker

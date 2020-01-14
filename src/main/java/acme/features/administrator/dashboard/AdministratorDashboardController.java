@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.jobsApplicationDashboard;
+package acme.features.administrator.dashboard;
 
 import javax.annotation.PostConstruct;
 
@@ -19,19 +19,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
-import acme.form.JobsApplicationChart;
+import acme.form.Dashboard;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/administrator/jobs-application-chart/")
-public class AdministratorJobsApplicationDashboardController extends AbstractController<Administrator, JobsApplicationChart> {
+@RequestMapping("/administrator/dashboard/")
+public class AdministratorDashboardController extends AbstractController<Administrator, Dashboard> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorJobsApplicationDashboardChartService chartService;
+	private AdministratorDashboardService chartService;
 
 
 	// Constructors -----------------------------------------------------------

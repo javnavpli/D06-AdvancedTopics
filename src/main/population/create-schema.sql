@@ -119,15 +119,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `consumer` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `credit_card` (
        `id` integer not null,
         `version` integer not null,
@@ -254,49 +245,12 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `offer` (
-       `id` integer not null,
-        `version` integer not null,
-        `deadline` datetime(6),
-        `info` varchar(255),
-        `max_money_amount` double precision,
-        `max_money_currency` varchar(255),
-        `min_money_amount` double precision,
-        `min_money_currency` varchar(255),
-        `moment` datetime(6),
-        `ticker` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `provider` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `company` varchar(255),
-        `sector` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `request_auditor` (
        `id` integer not null,
         `version` integer not null,
         `firm` varchar(255),
         `responsibility_statement` varchar(255),
         `user_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `request_entity` (
-       `id` integer not null,
-        `version` integer not null,
-        `deadline` datetime(6),
-        `moment` datetime(6),
-        `reward_amount` double precision,
-        `reward_currency` varchar(255),
-        `text` varchar(255),
-        `ticker` varchar(255),
-        `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -334,6 +288,9 @@
         `enabled` bit not null,
         `identity_email` varchar(255),
         `identity_name` varchar(255),
+        `identity_phone_area_code` varchar(255),
+        `identity_phone_country_code` integer,
+        `identity_phone_number` varchar(255),
         `identity_surname` varchar(255),
         `password` varchar(255),
         `username` varchar(255),
@@ -373,11 +330,9 @@ create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
-create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 
     alter table `request_auditor` 
        add constraint UK_orm9pwqd7l8xgucb1vr302u09 unique (`user_id`);
-create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
@@ -432,11 +387,6 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
-    alter table `consumer` 
-       add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
     alter table `duty` 
        add constraint `FKs2uoxh4i5ya8ptyefae60iao1` 
        foreign key (`job_id`) 
@@ -466,11 +416,6 @@ create index IDX6075l7l7ajup0b22keibg4bil on `request_entity` (`deadline`);
        add constraint `FKpcpr0xb5k7s4rxv5pulstt5v9` 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
-
-    alter table `provider` 
-       add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
 
     alter table `request_auditor` 
        add constraint `FKg9gmiivm111rnb6yd8eq82kbk` 

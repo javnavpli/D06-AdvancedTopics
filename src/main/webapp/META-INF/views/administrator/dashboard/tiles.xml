@@ -18,8 +18,8 @@
 
 <tiles-definitions>
 	
-	<definition name="administrator/list-data-employer-worker/form" extends="master">
-		<put-attribute name="body" type="template" value="../administrator/list-data-employer-worker/form.jsp"/>
+	<definition name="administrator/dashboard/form" extends="master">
+		<put-attribute name="body" type="template" value="../administrator/dashboard/form.jsp" />
 	</definition>
-	
+
 </tiles-definitions>

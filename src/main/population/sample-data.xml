@@ -320,14 +320,14 @@
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="status" value="PENDING" />
+    	<property name="status" value="ACCEPTED" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job1" />
     </bean>
     
     <bean name="application2" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="EMP1-JOB2:WOR1" />
-    	<property name="moment" value="2019/12/12 21:00" />
+    	<property name="moment" value="2019/12/30 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
@@ -338,18 +338,18 @@
     
     <bean name="application3" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="EMP1-JOB2:WOR2" />
-    	<property name="moment" value="2019/12/12 23:00" />
+    	<property name="moment" value="2019/12/31 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="status" value="PENDING" />
+    	<property name="status" value="REJECTED" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job1" />
     </bean>
     
     <bean name="application4" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="EMP2-JOB3:WOR2" />
-    	<property name="moment" value="2019/12/09 21:00" />
+    	<property name="moment" value="2019/12/28 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
@@ -360,22 +360,22 @@
     
     <bean name="application5" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="EMP1-JOB1:WOR2" />
-    	<property name="moment" value="2019/12/12 23:00" />
+    	<property name="moment" value="2019/12/26 23:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="status" value="PENDING" />
+    	<property name="status" value="ACCEPTED" />
     	<property name="worker" ref="worker2Worker" />
     	<property name="job" ref="job3" />
     </bean>
     
     <bean name="application6" class="acme.entities.applications.Application">
     	<property name="referenceNumber" value="EMP2-JOB3:WOR1" />
-    	<property name="moment" value="2019/12/12 21:00" />
+    	<property name="moment" value="2019/12/30 21:00" />
     	<property name="statement" value="example statement" />
     	<property name="skills" value="example skills" />
     	<property name="qualifications" value="example qualifications" />
-    	<property name="status" value="PENDING" />
+    	<property name="status" value="REJECTED" />
     	<property name="worker" ref="worker1Worker" />
     	<property name="job" ref="job3" />
     </bean>

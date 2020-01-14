@@ -39,10 +39,6 @@
        drop 
        foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
 
-    alter table `consumer` 
-       drop 
-       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
-
     alter table `duty` 
        drop 
        foreign key `FKs2uoxh4i5ya8ptyefae60iao1`;
@@ -66,10 +62,6 @@
     alter table `non_commercial_banner` 
        drop 
        foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
-
-    alter table `provider` 
-       drop 
-       foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
     alter table `request_auditor` 
        drop 
@@ -117,8 +109,6 @@
 
     drop table if exists `company_records`;
 
-    drop table if exists `consumer`;
-
     drop table if exists `credit_card`;
 
     drop table if exists `duty`;
@@ -143,13 +133,7 @@
 
     drop table if exists `non_commercial_banner`;
 
-    drop table if exists `offer`;
-
-    drop table if exists `provider`;
-
     drop table if exists `request_auditor`;
-
-    drop table if exists `request_entity`;
 
     drop table if exists `sanchez_bulletin`;
 

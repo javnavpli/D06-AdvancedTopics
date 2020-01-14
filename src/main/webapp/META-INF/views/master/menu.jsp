@@ -47,10 +47,9 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/chart"/>
 			<acme:menu-suboption code="master.menu.administrator.listAnnouncement" action="/administrator/announcement/list"/>
 			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/show"/>
-			<acme:menu-suboption code="master.menu.administrator.listData" action="/administrator/list-data/list-mine"/>
-			<acme:menu-suboption code="master.menu.administrator.companyRecordsChart" action="/administrator/companies-investors-chart/chart"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.companyRecords" action="/administrator/company-records/list"/>
 			<acme:menu-suboption code="master.menu.administrator.investorRecord" action="/administrator/investor-record/list"/>
@@ -58,9 +57,6 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.listRequestAuditor" action="/administrator/request-auditor/list"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
-     		<acme:menu-suboption code="master.menu.administrator.jobsApplicationsChart" action="/administrator/jobs-application-chart/chart"/>
-      		<acme:menu-suboption code="master.menu.administrator.applicationsPerDayChart" action="/administrator/applications-per-day-chart/chart"/>
-      		<acme:menu-suboption code="master.menu.administrator.listDataEmployerWorker" action="/administrator/list-data-employer-worker/list-mine"/>
 			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
