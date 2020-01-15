@@ -499,15 +499,11 @@
     <bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
         <property name="organisationName" value="organisation1" />
         <property name="creditCard" ref="creditCard1" />
-        <property name="nonCommercialBanners">
+        <property name="banners">
             <list>
                 <ref bean="ncbanner1" />
                 <ref bean="ncbanner2" />
-            </list>
-        </property>
-        <property name="commercialBanners">
-            <list>
-                <ref bean="cbanner1" />
+		<ref bean="cbanner1" />
                 <ref bean="cbanner2" />
                 <ref bean="cbanner3" />
             </list>
