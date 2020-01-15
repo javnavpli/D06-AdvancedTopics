@@ -25,7 +25,9 @@ public class AuthenticatedUserThreadDeleteService implements AbstractDeleteServi
 	public boolean authorise(final Request<UserThread> request) {
 		assert request != null;
 
-		return true;
+		int userThread = request.getModel().getInteger("id");
+
+		return this.repository.findStarterMessageThread(userThread) == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override

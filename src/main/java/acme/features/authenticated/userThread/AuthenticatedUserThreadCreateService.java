@@ -25,7 +25,9 @@ public class AuthenticatedUserThreadCreateService implements AbstractCreateServi
 	public boolean authorise(final Request<UserThread> request) {
 		assert request != null;
 
-		return true;
+		int messageThread = request.getModel().getInteger("id");
+
+		return this.repository.findStarterByMessageThreadId(messageThread) == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override

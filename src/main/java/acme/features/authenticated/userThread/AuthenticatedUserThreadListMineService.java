@@ -36,6 +36,12 @@ public class AuthenticatedUserThreadListMineService implements AbstractListServi
 		assert entity != null;
 		assert model != null;
 
+		int messageThreadID = request.getModel().getInteger("id");
+		int activeRoleID = request.getPrincipal().getActiveRoleId();
+		int starter = this.repository.findStarterByMessageThreadId(messageThreadID);
+		boolean canAdd = starter == activeRoleID;
+		model.setAttribute("canAdd", canAdd);
+
 		request.unbind(entity, model, "userUsername");
 
 	}
