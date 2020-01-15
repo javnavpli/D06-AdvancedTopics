@@ -9,8 +9,7 @@ import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
-import acme.entities.banner.CommercialBanner;
-import acme.entities.banner.NonCommercialBanner;
+import acme.entities.banner.Banner;
 import acme.entities.creditCard.CreditCard;
 import acme.framework.entities.UserRole;
 import lombok.Getter;
@@ -32,9 +31,6 @@ public class Sponsor extends UserRole {
 	private CreditCard								creditCard;
 
 	@OneToMany(mappedBy = "sponsor")
-	private Collection<@Valid NonCommercialBanner>	nonCommercialBanners;
-
-	@OneToMany(mappedBy = "sponsor")
-	private Collection<@Valid CommercialBanner>		commercialBanners;
+	private Collection<@Valid Banner>	banners;
 
 }
